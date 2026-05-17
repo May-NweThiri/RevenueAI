@@ -1,13 +1,17 @@
 FROM python:3.12-slim
 
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    gcc build-essential libpq-dev \
+    && rm -rf /var/lib/apt/lists/*
+
 WORKDIR /app
 
 COPY requirements.txt .
 
 RUN pip install --no-cache-dir --upgrade pip setuptools wheel \
     && grep -v "^pandasai==" requirements.txt > /tmp/req_base.txt \
-    && pip install --no-cache-dir -r /tmp/req_base.txt \
-    && pip install --no-cache-dir pandasai==2.3.2 --no-deps
+    && pip install --no-cache-dir --no-build-isolation -r /tmp/req_base.txt \
+    && pip install --no-cache-dir --no-build-isolation pandasai==2.3.2 --no-deps
 
 COPY . .
 
