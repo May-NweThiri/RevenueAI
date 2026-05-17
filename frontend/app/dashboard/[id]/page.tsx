@@ -1,0 +1,168 @@
+"use client"
+
+import { useParams } from "next/navigation"
+import Link from "next/link"
+import { useDataset } from "@/hooks/use-dataset"
+import { useMetrics } from "@/hooks/use-metrics"
+import { useInsights } from "@/hooks/use-insights"
+import { GlassCard } from "@/components/shared/glass-card"
+import {
+  LoadingPage,
+  LoadingSpinner,
+} from "@/components/shared/loading-spinner"
+import {
+  MetricsGrid,
+  MonthlyRevenueTable,
+  CategoryBreakdown,
+  TopProducts,
+} from "@/components/dashboard/metrics-grid"
+import { formatDate, getSeverityColor, timeAgo } from "@/lib/utils"
+import {
+  MessageSquare,
+  Table,
+  Eye,
+  AlertTriangle,
+  Lightbulb,
+  TrendingUp,
+} from "lucide-react"
+
+export default function DatasetDetailPage() {
+  const params = useParams()
+  const id = params.id as string
+  const { dataset, loading: dsLoading, error: dsError } = useDataset(id)
+  const { metrics, loading: mLoading, error: mError } = useMetrics(id)
+  const { insights, loading: iLoading, error: iError } = useInsights(id)
+
+  if (dsLoading) return <LoadingPage />
+
+  if (dsError || !dataset) {
+    return (
+      <div className="flex items-center justify-center py-20">
+        <p className="text-sm text-red-400">
+          Error: {dsError || "Dataset not found"}
+        </p>
+      </div>
+    )
+  }
+
+  return (
+    <div className="space-y-6 py-6">
+      {/* Header */}
+      <div className="flex items-start justify-between">
+        <div>
+          <h2 className="text-xl font-semibold tracking-tight">
+            {dataset.name}
+          </h2>
+          <p className="mt-1 text-sm text-foreground/40">
+            {dataset.row_count} rows &middot; {dataset.column_count} columns
+            &middot; uploaded {timeAgo(dataset.created_at)}
+          </p>
+        </div>
+        <div className="flex items-center gap-2">
+          <Link
+            href={`/dashboard/${id}/chat`}
+            className="flex items-center gap-1.5 rounded-lg bg-accent px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-accent-hover"
+          >
+            <MessageSquare className="h-4 w-4" />
+            AI Chat
+          </Link>
+        </div>
+      </div>
+
+      {/* KPI Metrics */}
+      {mLoading ? (
+        <LoadingSpinner className="py-12" />
+      ) : mError ? (
+        <p className="text-sm text-red-400">Error loading metrics: {mError}</p>
+      ) : metrics ? (
+        <>
+          <MetricsGrid metrics={metrics} />
+
+          {/* Charts Row */}
+          <div className="grid gap-4 lg:grid-cols-3">
+            <MonthlyRevenueTable metrics={metrics} />
+            <CategoryBreakdown metrics={metrics} />
+            <TopProducts metrics={metrics} />
+          </div>
+        </>
+      ) : null}
+
+      {/* Columns */}
+      {dataset.columns_meta && dataset.columns_meta.length > 0 && (
+        <GlassCard>
+          <h3 className="mb-4 flex items-center gap-2 text-sm font-medium text-foreground/70">
+            <Table className="h-4 w-4" />
+            Columns Detected
+          </h3>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b border-surface-border text-left text-xs text-foreground/40">
+                  <th className="pb-2 font-medium">Column</th>
+                  <th className="pb-2 font-medium">Type</th>
+                  <th className="pb-2 font-medium">Detected Role</th>
+                  <th className="pb-2 font-medium">Sample Values</th>
+                </tr>
+              </thead>
+              <tbody>
+                {dataset.columns_meta.map((col) => (
+                  <tr
+                    key={col.name}
+                    className="border-b border-surface-border/50 text-foreground/70"
+                  >
+                    <td className="py-2.5 font-medium text-foreground/90">
+                      {col.name}
+                    </td>
+                    <td className="py-2.5 text-foreground/50">{col.dtype}</td>
+                    <td className="py-2.5">
+                      <span className="rounded-md bg-accent/10 px-2 py-0.5 text-xs text-accent">
+                        {col.detected_role}
+                      </span>
+                    </td>
+                    <td className="py-2.5 text-foreground/50">
+                      {col.sample_values?.slice(0, 3).join(", ")}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </GlassCard>
+      )}
+
+      {/* Insights */}
+      {iLoading ? (
+        <LoadingSpinner className="py-8" />
+      ) : insights.length > 0 ? (
+        <GlassCard>
+          <h3 className="mb-4 flex items-center gap-2 text-sm font-medium text-foreground/70">
+            <Lightbulb className="h-4 w-4" />
+            AI Insights
+          </h3>
+          <div className="space-y-3">
+            {insights.map((insight) => (
+              <div
+                key={insight.id}
+                className={`rounded-lg border-l-2 p-4 ${getSeverityColor(insight.severity)}`}
+              >
+                <div className="flex items-start justify-between">
+                  <div>
+                    <p className="text-sm font-medium text-foreground/90">
+                      {insight.title}
+                    </p>
+                    <p className="mt-1 text-xs text-foreground/50">
+                      {insight.content}
+                    </p>
+                  </div>
+                  <span className="shrink-0 rounded-full bg-foreground/5 px-2 py-0.5 text-[10px] uppercase tracking-wider text-foreground/40">
+                    {insight.type}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </GlassCard>
+      ) : null}
+    </div>
+  )
+}
