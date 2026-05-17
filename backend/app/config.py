@@ -20,7 +20,7 @@ class Settings(BaseSettings):
     OPENAI_MAX_TOKENS: int = 2000
     OPENAI_TEMPERATURE: float = 0.3
 
-    CORS_ORIGINS: str = "http://localhost:3000,https://*.vercel.app"
+    CORS_ORIGINS: str = "http://localhost:3000,https://revenue-ai-delta.vercel.app"
 
     class Config:
         env_file = ".env"
