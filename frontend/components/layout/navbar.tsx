@@ -23,12 +23,6 @@ export function Navbar() {
       <div>
         <h1 className="text-sm font-medium text-foreground/80">{title}</h1>
       </div>
-      <div className="ml-auto flex items-center gap-3">
-        <div className="flex items-center gap-2 rounded-full bg-accent/10 px-3 py-1 text-xs text-accent">
-          <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-          Local Server
-        </div>
-      </div>
     </header>
   )
 }
