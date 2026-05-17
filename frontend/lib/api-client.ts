@@ -43,12 +43,22 @@ export const api = {
   uploadFile: async (file: File): Promise<UploadResponse> => {
     const form = new FormData()
     form.append("file", file)
-    const res = await fetch(`${BASE_URL}/api/v1/upload`, {
-      method: "POST",
-      body: form,
-    })
+    const url = `${BASE_URL}/api/v1/upload`
+    console.log("Uploading to:", url)
+    let res: Response
+    try {
+      res = await fetch(url, {
+        method: "POST",
+        body: form,
+      })
+    } catch (e) {
+      throw new Error(
+        `Network error: ${e instanceof Error ? e.message : "unknown"} (API URL: ${BASE_URL})`,
+      )
+    }
     if (!res.ok) {
-      throw new ApiError(res.status, await res.text())
+      const body = await res.text()
+      throw new ApiError(res.status, `Status ${res.status}: ${body || res.statusText}`)
     }
     return res.json()
   },

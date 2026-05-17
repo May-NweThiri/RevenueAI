@@ -34,7 +34,12 @@ export default function UploadPage() {
       const datasetId = await pollForDataset(upload.id)
       setState({ status: "done", datasetId })
     } catch (e: unknown) {
-      const msg = e instanceof Error ? e.message : "Upload failed"
+      let msg = e instanceof Error ? e.message : "Upload failed"
+      if (e instanceof TypeError && e.message === "Failed to fetch") {
+        const apiUrl = process.env.NEXT_PUBLIC_API_URL || "not set"
+        msg = `Cannot reach API at ${apiUrl}. Check that the backend is running and CORS is configured.`
+      }
+      console.error("Upload error:", e)
       setState({ status: "error", message: msg })
     }
   }, [])
