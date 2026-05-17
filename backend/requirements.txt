@@ -22,3 +22,4 @@ faker>=19.12.0,<20.0.0
 pillow==11.2.1
 sqlglot==30.8.0
 matplotlib==3.10.1
+# trigger rebuild
