@@ -1,8 +1,6 @@
 from typing import Any, Generator
 
 import pandas as pd
-from pandasai import Agent as PandasAIAgent
-from pandasai.llm.openai import OpenAI as PandasAILLM
 
 from app.config import settings
 
@@ -73,6 +71,13 @@ class RevenueAIChatAgent:
 
     def _init_pandasai(self):
         if not settings.OPENAI_API_KEY:
+            self.pandasai = None
+            return
+
+        try:
+            from pandasai import Agent as PandasAIAgent
+            from pandasai.llm.openai import OpenAI as PandasAILLM
+        except ImportError:
             self.pandasai = None
             return
 
