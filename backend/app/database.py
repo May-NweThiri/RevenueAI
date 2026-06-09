@@ -8,11 +8,15 @@ from app.config import settings
 logger = logging.getLogger(__name__)
 
 db_available = False
+db_error: str | None = None
 
 
 def _normalize_database_url(url: str) -> str:
     if url.startswith("postgres://"):
-        return url.replace("postgres://", "postgresql://", 1)
+        url = url.replace("postgres://", "postgresql://", 1)
+    if "supabase.com" in url and "sslmode=" not in url:
+        separator = "&" if "?" in url else "?"
+        url = f"{url}{separator}sslmode=require"
     return url
 
 
@@ -37,15 +41,20 @@ class Base(DeclarativeBase):
 
 
 def init_db() -> None:
-    global db_available
+    global db_available, db_error
     import app.models  # noqa: F401 — register all tables with Base.metadata
 
-    with engine.connect() as conn:
-        conn.execute(text("SELECT 1"))
-
-    Base.metadata.create_all(bind=engine)
-    db_available = True
-    logger.info("Database initialized successfully")
+    try:
+        with engine.connect() as conn:
+            conn.execute(text("SELECT 1"))
+        Base.metadata.create_all(bind=engine)
+        db_available = True
+        db_error = None
+        logger.info("Database initialized successfully")
+    except Exception as e:
+        db_available = False
+        db_error = str(e)
+        raise
 
 
 def get_db():
