@@ -29,6 +29,7 @@ def _create_engine():
         kwargs["connect_args"] = {"check_same_thread": False}
     else:
         kwargs["pool_recycle"] = 300
+        kwargs["connect_args"] = {"sslmode": "require", "connect_timeout": 15}
 
     return create_engine(url, **kwargs)
 

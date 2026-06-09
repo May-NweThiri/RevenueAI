@@ -3,11 +3,12 @@ from typing import Generator
 from fastapi import HTTPException
 from sqlalchemy.orm import Session
 
-from app.database import SessionLocal, db_available
+import app.database as db
+from app.database import SessionLocal
 
 
 def get_db() -> Generator[Session, None, None]:
-    if not db_available:
+    if not db.db_available:
         raise HTTPException(
             status_code=503,
             detail=(
