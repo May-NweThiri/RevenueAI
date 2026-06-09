@@ -3,12 +3,12 @@ from typing import Generator
 from fastapi import HTTPException
 from sqlalchemy.orm import Session
 
-import app.database as db
+import app.database as database
 from app.database import SessionLocal
 
 
 def get_db() -> Generator[Session, None, None]:
-    if not db.db_available:
+    if not database.db_available:
         raise HTTPException(
             status_code=503,
             detail=(
@@ -16,8 +16,8 @@ def get_db() -> Generator[Session, None, None]:
                 "Supabase PostgreSQL connection string and redeploy."
             ),
         )
-    db = SessionLocal()
+    session = SessionLocal()
     try:
-        yield db
+        yield session
     finally:
-        db.close()
+        session.close()
