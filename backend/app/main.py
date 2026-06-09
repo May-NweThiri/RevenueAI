@@ -1,28 +1,35 @@
 import logging
 from contextlib import asynccontextmanager
 
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import JSONResponse
+from starlette.exceptions import HTTPException as StarletteHTTPException
 
 from app.config import settings
-from app.database import init_db
+from app.database import init_db, db_available
 from app.api.router import api_router
 
 logger = logging.getLogger(__name__)
 
-db_available = False
+
+def _cors_headers(request: Request) -> dict[str, str]:
+    origin = request.headers.get("origin")
+    allowed = [o.strip() for o in settings.CORS_ORIGINS.split(",") if o.strip()]
+    if origin and origin in allowed:
+        return {
+            "Access-Control-Allow-Origin": origin,
+            "Access-Control-Allow-Credentials": "true",
+        }
+    return {}
 
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    global db_available
     try:
         init_db()
-        db_available = True
-        logger.info("Database initialized successfully")
     except Exception as e:
-        db_available = False
-        logger.warning("Database unavailable: %s", e)
+        logger.error("Database unavailable: %s", e)
     yield
 
 
@@ -35,11 +42,32 @@ app = FastAPI(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=settings.CORS_ORIGINS.split(","),
+    allow_origins=[o.strip() for o in settings.CORS_ORIGINS.split(",") if o.strip()],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+
+@app.exception_handler(StarletteHTTPException)
+async def http_exception_handler(request: Request, exc: StarletteHTTPException):
+    detail = exc.detail if isinstance(exc.detail, str) else str(exc.detail)
+    return JSONResponse(
+        status_code=exc.status_code,
+        content={"detail": detail},
+        headers=_cors_headers(request),
+    )
+
+
+@app.exception_handler(Exception)
+async def unhandled_exception_handler(request: Request, exc: Exception):
+    logger.exception("Unhandled error on %s", request.url.path)
+    return JSONResponse(
+        status_code=500,
+        content={"detail": "Internal server error"},
+        headers=_cors_headers(request),
+    )
+
 
 app.include_router(api_router)
 

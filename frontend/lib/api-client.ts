@@ -20,6 +20,17 @@ class ApiError extends Error {
   }
 }
 
+function parseErrorMessage(status: number, body: string): string {
+  if (!body) return `Request failed (${status})`
+  try {
+    const parsed = JSON.parse(body) as { detail?: string }
+    if (parsed.detail) return parsed.detail
+  } catch {
+    // not JSON
+  }
+  return body
+}
+
 async function request<T>(
   path: string,
   options?: RequestInit,
@@ -34,7 +45,7 @@ async function request<T>(
   })
   if (!res.ok) {
     const body = await res.text()
-    throw new ApiError(res.status, body || res.statusText)
+    throw new ApiError(res.status, parseErrorMessage(res.status, body))
   }
   return res.json()
 }
@@ -58,7 +69,7 @@ export const api = {
     }
     if (!res.ok) {
       const body = await res.text()
-      throw new ApiError(res.status, `Status ${res.status}: ${body || res.statusText}`)
+      throw new ApiError(res.status, parseErrorMessage(res.status, body))
     }
     return res.json()
   },

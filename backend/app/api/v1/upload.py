@@ -3,6 +3,7 @@ from fastapi import APIRouter, Depends, UploadFile as FastAPIUploadFile, HTTPExc
 from sqlalchemy.orm import Session
 
 from app.api.deps import get_db
+from app.database import SessionLocal
 from app.models.upload import Upload
 from app.schemas.upload import UploadResponse, UploadListResponse
 from app.services.file_service import process_upload, parse_upload_file
@@ -51,7 +52,7 @@ def get_upload(upload_id: str, db: Session = Depends(get_db)):
 
 
 def process_dataset(upload_id: str):
-    db_local = next(get_db())
+    db_local = SessionLocal()
     try:
         upload = db_local.query(Upload).filter(Upload.id == upload_id).first()
         if not upload:
