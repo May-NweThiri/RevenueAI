@@ -7,7 +7,7 @@ from fastapi.responses import JSONResponse
 from starlette.exceptions import HTTPException as StarletteHTTPException
 
 from app.config import settings
-from app.database import init_db, db_available, db_error
+from app.database import init_db, db_available, db_error, get_database_diagnostics
 from app.api.router import api_router
 
 logger = logging.getLogger(__name__)
@@ -80,6 +80,8 @@ def health_check():
         "version": "0.1.0",
         "database": "connected" if db_available else "unavailable",
     }
-    if not db_available and db_error:
-        payload["database_error"] = db_error
+    if not db_available:
+        payload["database_config"] = get_database_diagnostics()
+        if db_error:
+            payload["database_error"] = db_error
     return payload

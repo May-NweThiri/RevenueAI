@@ -1,4 +1,5 @@
 import logging
+from urllib.parse import urlparse
 
 from sqlalchemy import create_engine, text
 from sqlalchemy.orm import DeclarativeBase, sessionmaker
@@ -55,6 +56,22 @@ def init_db() -> None:
         db_available = False
         db_error = str(e)
         raise
+
+
+def get_database_diagnostics() -> dict[str, str]:
+    url = _normalize_database_url(settings.DATABASE_URL)
+    parsed = urlparse(url)
+    if "sqlite" in url:
+        source = "sqlite-default"
+    elif parsed.hostname and "supabase.com" in parsed.hostname:
+        source = "supabase"
+    else:
+        source = "postgresql"
+    return {
+        "source": source,
+        "host": parsed.hostname or "unknown",
+        "user": parsed.username or "unknown",
+    }
 
 
 def get_db():
