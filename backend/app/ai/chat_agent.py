@@ -1,12 +1,15 @@
+import logging
 from typing import Any, Generator
 
 import pandas as pd
 
 from app.config import settings
 
+logger = logging.getLogger(__name__)
+
 
 class RevenueAIChatAgent:
-    """AI chat agent using LangChain OpenAI with pandas local fallback."""
+    """AI chat agent using the OpenAI API with pandas local fallback."""
 
     def __init__(
         self,
@@ -17,18 +20,6 @@ class RevenueAIChatAgent:
         self.df = df
         self.messages = messages or []
         self.metadata = metadata or {}
-        self._llm = None
-
-    def _get_llm(self):
-        if self._llm is None and settings.OPENAI_API_KEY:
-            from langchain_openai import ChatOpenAI
-
-            self._llm = ChatOpenAI(
-                model=settings.OPENAI_MODEL,
-                temperature=0.3,
-                api_key=settings.OPENAI_API_KEY,
-            )
-        return self._llm
 
     def _build_context(self) -> str:
         cols = self.metadata.get("columns_meta", [])
@@ -68,43 +59,58 @@ class RevenueAIChatAgent:
         self.messages.append({"role": "assistant", "content": full_answer})
 
     def _compute_answer_stream(self, question: str) -> Generator[dict, None, None]:
-        yield from self._langchain_stream(question)
-
-    def _langchain_stream(self, question: str) -> Generator[dict, None, None]:
-        llm = self._get_llm()
-        if llm is None:
+        if not settings.OPENAI_API_KEY:
             yield {"type": "token", "content": self._local_fallback(question)}
             return
+        yield from self._openai_stream(question)
 
+    def _openai_stream(self, question: str) -> Generator[dict, None, None]:
         context = self._build_context()
         system_prompt = (
             "You are RevenueAI, an expert AI business analyst. "
             "Answer questions about the user's uploaded dataset using the context below. "
             "Be specific with numbers, cite column names, and give actionable insights. "
-            "Format currency as dollars. Use markdown for lists when helpful.\n\n"
+            "You may also answer general knowledge questions about values that appear "
+            "in the data (e.g. what a location or term is). "
+            "Use markdown for lists when helpful.\n\n"
             f"{context}"
         )
 
-        try:
-            from langchain_core.messages import AIMessage, HumanMessage, SystemMessage
-        except ImportError:
-            yield {"type": "token", "content": self._local_fallback(question)}
-            return
-
-        lc_messages = [SystemMessage(content=system_prompt)]
+        api_messages: list[dict] = [{"role": "system", "content": system_prompt}]
         for m in self.messages[-8:]:
-            if m["role"] == "user":
-                lc_messages.append(HumanMessage(content=m["content"]))
-            elif m["role"] == "assistant":
-                lc_messages.append(AIMessage(content=m["content"]))
-        lc_messages.append(HumanMessage(content=question))
+            if m.get("role") in ("user", "assistant"):
+                api_messages.append({"role": m["role"], "content": m["content"]})
+        api_messages.append({"role": "user", "content": question})
 
         try:
-            for chunk in llm.stream(lc_messages):
-                if chunk.content:
-                    yield {"type": "token", "content": chunk.content}
-        except Exception:
-            yield {"type": "token", "content": self._local_fallback(question)}
+            from openai import OpenAI
+
+            client = OpenAI(api_key=settings.OPENAI_API_KEY)
+            stream = client.chat.completions.create(
+                model=settings.OPENAI_MODEL,
+                messages=api_messages,
+                temperature=settings.OPENAI_TEMPERATURE,
+                max_tokens=settings.OPENAI_MAX_TOKENS,
+                stream=True,
+            )
+            got_content = False
+            for chunk in stream:
+                delta = chunk.choices[0].delta.content if chunk.choices else None
+                if delta:
+                    got_content = True
+                    yield {"type": "token", "content": delta}
+            if not got_content:
+                yield {"type": "token", "content": self._local_fallback(question)}
+        except Exception as e:
+            logger.exception("OpenAI chat request failed")
+            yield {
+                "type": "token",
+                "content": (
+                    f"*AI request failed ({type(e).__name__}: {str(e)[:200]}). "
+                    f"Falling back to basic analysis.*\n\n"
+                    + self._local_fallback(question)
+                ),
+            }
 
     def _local_fallback(self, question: str) -> str:
         q = question.lower()
