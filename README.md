@@ -7,9 +7,9 @@ AI-powered revenue analytics platform. Upload a sales CSV/Excel file and get an 
 
 | Part | Platform | URL |
 |---|---|---|
-| Frontend | Vercel | https://revenue-ai-delta.vercel.app |
-| Backend API | Railway | https://revenueai-production.up.railway.app |
-| Health check | — | https://revenueai-production.up.railway.app/health |
+| Frontend | Vercel | 
+| Backend API | Railway |
+| Health check | — | 
 
 ---
 
