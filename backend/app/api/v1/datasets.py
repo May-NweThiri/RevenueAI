@@ -6,6 +6,7 @@ from app.models.dataset import Dataset
 from app.schemas.dataset import DatasetResponse, DatasetListResponse, PreviewResponse
 from app.services.dataset_service import get_dataset, get_datasets, get_datasets_count, delete_dataset
 from app.services.dataset_file_loader import load_dataset_dataframe
+from app.ai.summary_generator import generate_summary
 
 router = APIRouter()
 
@@ -35,6 +36,24 @@ def remove_dataset(dataset_id: str, db: Session = Depends(get_db)):
     if not deleted:
         raise HTTPException(status_code=404, detail="Dataset not found")
     return None
+
+
+@router.get("/datasets/{dataset_id}/summary")
+def dataset_summary(dataset_id: str, db: Session = Depends(get_db)):
+    dataset = get_dataset(db, dataset_id)
+    if not dataset:
+        raise HTTPException(status_code=404, detail="Dataset not found")
+
+    if not dataset.file_path:
+        raise HTTPException(status_code=400, detail="Dataset file not available")
+
+    try:
+        df = load_dataset_dataframe(dataset, db)
+        return generate_summary(df, dataset.columns_meta or [], dataset.name)
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Failed to build summary: {e}")
 
 
 @router.get("/datasets/{dataset_id}/preview", response_model=PreviewResponse)

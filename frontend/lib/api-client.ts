@@ -7,6 +7,7 @@ import type {
 import type { MetricsGroupedResponse } from "@/types/metrics"
 import type { InsightListResponse } from "@/types/insight"
 import type { ChatResponse, ChatRequest, ConversationResponse } from "@/types/chat"
+import type { DatasetSummary } from "@/types/summary"
 
 const BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000"
 
@@ -91,6 +92,9 @@ export const api = {
 
   getInsights: (id: string): Promise<InsightListResponse> =>
     request(`/api/v1/insights/${id}`),
+
+  getSummary: (id: string): Promise<DatasetSummary> =>
+    request(`/api/v1/datasets/${id}/summary`),
 
   sendMessage: (datasetId: string, msg: string): Promise<ChatResponse> =>
     request(`/api/v1/chat/${datasetId}`, {

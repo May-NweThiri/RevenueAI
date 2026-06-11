@@ -12,6 +12,7 @@ import {
   LoadingSpinner,
 } from "@/components/shared/loading-spinner"
 import { MetricsGrid } from "@/components/dashboard/metrics-grid"
+import { SummaryCard } from "@/components/dashboard/summary-card"
 import {
   RevenueTrendChart,
   CategoryPieChart,
@@ -101,6 +102,8 @@ export default function DatasetDetailPage() {
       ) : metrics ? (
         <>
           <MetricsGrid metrics={metrics} />
+
+          <SummaryCard datasetId={id} />
 
           <RevenueTrendChart metrics={metrics} />
 
