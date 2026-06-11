@@ -23,6 +23,68 @@ class RevenueAIChatAgent:
         self.messages = messages or []
         self.metadata = metadata or {}
 
+    def _role_cols(self, role: str) -> list[str]:
+        cols = self.metadata.get("columns_meta", [])
+        return [c["name"] for c in cols if c.get("detected_role") == role]
+
+    def _computed_aggregates(self) -> str:
+        """Complete aggregate tables computed from the full dataframe.
+
+        Stored metric summaries are truncated; these tables guarantee the LLM
+        sees every month / product / category, not just a sample.
+        """
+        revenue_cols = self._role_cols("revenue")
+        if not revenue_cols:
+            return ""
+
+        rev = revenue_cols[0]
+        sections: list[str] = []
+
+        try:
+            total = float(pd.to_numeric(self.df[rev], errors="coerce").fillna(0).sum())
+            sections.append(f"Total revenue (column '{rev}'): ${total:,.2f}")
+        except Exception:
+            pass
+
+        date_cols = self._role_cols("date")
+        if date_cols:
+            try:
+                tmp = self.df[[date_cols[0], rev]].copy()
+                tmp[date_cols[0]] = pd.to_datetime(tmp[date_cols[0]], errors="coerce")
+                tmp[rev] = pd.to_numeric(tmp[rev], errors="coerce").fillna(0)
+                tmp = tmp.dropna(subset=[date_cols[0]])
+                monthly = tmp.groupby(tmp[date_cols[0]].dt.to_period("M"))[rev].sum().sort_index()
+                if len(monthly) > 0:
+                    lines = [f"Monthly revenue (complete, all {len(monthly)} months):"]
+                    for month, val in monthly.tail(60).items():
+                        lines.append(f"  {month}: ${float(val):,.2f}")
+                    sections.append("\n".join(lines))
+            except Exception:
+                pass
+
+        product_cols = self._role_cols("product")
+        if product_cols:
+            try:
+                grouped = _normalized_groups(self.df, product_cols[0], rev).head(15)
+                lines = [f"Revenue by product ('{product_cols[0]}', top {len(grouped)}):"]
+                for _, row in grouped.iterrows():
+                    lines.append(f"  {row['_label']}: ${float(row['_value']):,.2f}")
+                sections.append("\n".join(lines))
+            except Exception:
+                pass
+
+        for cat_col in self._role_cols("category")[:2]:
+            try:
+                grouped = _normalized_groups(self.df, cat_col, rev).head(20)
+                lines = [f"Revenue by {cat_col}:"]
+                for _, row in grouped.iterrows():
+                    lines.append(f"  {row['_label']}: ${float(row['_value']):,.2f}")
+                sections.append("\n".join(lines))
+            except Exception:
+                pass
+
+        return "\n\n".join(sections)
+
     def _build_context(self) -> str:
         cols = self.metadata.get("columns_meta", [])
         column_roles = "\n".join(
@@ -31,13 +93,17 @@ class RevenueAIChatAgent:
             for c in cols
         )
         metrics = self.metadata.get("metrics_summary", "")
+        aggregates = self._computed_aggregates()
         sample = self.df.head(8).to_string(index=False, max_cols=12)
         return (
             f"Dataset: {self.metadata.get('name', 'Unnamed')} "
             f"({self.metadata.get('row_count', 0)} rows, "
             f"{self.metadata.get('column_count', 0)} columns)\n"
             f"Columns:\n{column_roles}\n\n"
-            f"Key Metrics:\n{metrics}\n\n"
+            f"Computed aggregates (calculated from the FULL dataset — complete "
+            f"and authoritative, use these for any totals/breakdown questions):\n"
+            f"{aggregates}\n\n"
+            f"Key Metrics (truncated sample):\n{metrics}\n\n"
             f"Sample rows:\n{sample}"
         )
 
@@ -71,6 +137,10 @@ class RevenueAIChatAgent:
         system_prompt = (
             "You are RevenueAI, an expert AI business analyst. "
             "Answer questions about the user's uploaded dataset using the context below. "
+            "The 'Computed aggregates' section is complete and calculated from the full "
+            "dataset — when asked about monthly revenue, products, or category breakdowns, "
+            "use those numbers and list them fully. Never claim data is unavailable if it "
+            "appears there. "
             "Be specific with numbers, cite column names, and give actionable insights. "
             "You may also answer general knowledge questions about values that appear "
             "in the data (e.g. what a location or term is). "
