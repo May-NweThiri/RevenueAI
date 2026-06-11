@@ -1,4 +1,5 @@
 import logging
+import re
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI, Request
@@ -14,11 +15,25 @@ from app.api.router import api_router
 
 logger = logging.getLogger(__name__)
 
+# Vercel preview deployments use unique subdomains (e.g. revenue-abc123-team.vercel.app).
+VERCEL_ORIGIN_PATTERN = re.compile(r"^https://.*\.vercel\.app$")
+
+
+def _allowed_origins() -> list[str]:
+    return [o.strip() for o in settings.CORS_ORIGINS.split(",") if o.strip()]
+
+
+def _is_origin_allowed(origin: str | None) -> bool:
+    if not origin:
+        return False
+    if origin in _allowed_origins():
+        return True
+    return bool(VERCEL_ORIGIN_PATTERN.match(origin))
+
 
 def _cors_headers(request: Request) -> dict[str, str]:
     origin = request.headers.get("origin")
-    allowed = [o.strip() for o in settings.CORS_ORIGINS.split(",") if o.strip()]
-    if origin and origin in allowed:
+    if origin and _is_origin_allowed(origin):
         return {
             "Access-Control-Allow-Origin": origin,
             "Access-Control-Allow-Credentials": "true",
@@ -44,7 +59,8 @@ app = FastAPI(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[o.strip() for o in settings.CORS_ORIGINS.split(",") if o.strip()],
+    allow_origins=_allowed_origins(),
+    allow_origin_regex=r"^https://.*\.vercel\.app$",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
