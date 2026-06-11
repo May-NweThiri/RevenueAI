@@ -1,0 +1,301 @@
+Transaction ID,Transaction Date,Client,Item,Sales Channel,Region,Units,Rate,Sales Amount
+TX-00001,2024-07-02,Globex Ltd,Monitor,Online,Kano,4,206.8,827.2
+TX-00002,2025-06-27,Stark Industries,Phone,Wholesale,Lagos,3,470.61,1411.83
+TX-00003,2024-08-09,Initech,Monitor,Wholesale,Abuja,2,216.55,433.1
+TX-00004,2024-07-02,Stark Industries,Laptop,Online,Rivers,2,1190.76,2381.52
+TX-00005,2025-02-16,Acme Corp,Tablet,Wholesale,Rivers,1,308.08,308.08
+TX-00006,2024-03-23,Umbrella Inc,Phone,Online,Oyo,4,423.34,1693.36
+TX-00007,2025-01-01,Globex Ltd,Tablet,Wholesale,Kano,4,339.56,1358.24
+TX-00008,2024-06-30,Stark Industries,Laptop,Online,Kano,4,1222.9,4891.6
+TX-00009,2025-03-05,Acme Corp,Phone,Wholesale,Abuja,1,420.41,420.41
+TX-00010,2024-01-06,Umbrella Inc,Phone,Online,Rivers,2,432.88,865.76
+TX-00011,2024-02-26,Globex Ltd,Tablet,Retail,Abuja,4,291.45,1165.8
+TX-00012,2024-05-09,Initech,Tablet,Online,Abuja,4,330.16,1320.64
+TX-00013,2024-06-03,Stark Industries,Laptop,Online,Abuja,5,1266.95,6334.75
+TX-00014,2024-06-27,Globex Ltd,Phone,Online,Abuja,1,417.93,417.93
+TX-00015,2025-05-26,Globex Ltd,Laptop,Online,Rivers,5,1156.59,5782.95
+TX-00016,2025-05-28,Initech,Keyboard,Wholesale,Lagos,2,36.25,72.5
+TX-00017,2025-02-12,Initech,Phone,Retail,Abuja,3,424.47,1273.41
+TX-00018,2024-07-04,Acme Corp,Monitor,Wholesale,Rivers,3,221.51,664.53
+TX-00019,2024-08-19,Initech,Monitor,Wholesale,Lagos,4,208.13,832.52
+TX-00020,2024-09-12,Umbrella Inc,Keyboard,Retail,Rivers,2,36.85,73.7
+TX-00021,2024-09-19,Acme Corp,Phone,Retail,Oyo,4,442.9,1771.6
+TX-00022,2024-09-19,Umbrella Inc,Keyboard,Retail,Rivers,4,35.23,140.92
+TX-00023,2025-03-26,Globex Ltd,Tablet,Retail,Abuja,2,296.5,593.0
+TX-00024,2024-12-29,Initech,Laptop,Wholesale,Kano,3,1081.03,3243.09
+TX-00025,2024-08-24,Umbrella Inc,Laptop,Wholesale,Rivers,3,1237.72,3713.16
+TX-00026,2025-06-28,Globex Ltd,Monitor,Wholesale,Lagos,1,202.94,202.94
+TX-00027,2025-03-30,Globex Ltd,Keyboard,Wholesale,Rivers,2,35.08,70.16
+TX-00028,2024-10-21,Globex Ltd,Monitor,Online,Lagos,4,222.66,890.64
+TX-00029,2024-02-29,Umbrella Inc,Keyboard,Retail,Rivers,1,35.56,35.56
+TX-00030,2024-07-17,Acme Corp,Tablet,Retail,Abuja,5,314.64,1573.2
+TX-00031,2024-05-11,Globex Ltd,Laptop,Wholesale,Abuja,3,1190.6,3571.8
+TX-00032,2024-07-02,Initech,Monitor,Online,Rivers,4,222.72,890.88
+TX-00033,2025-01-26,Globex Ltd,Keyboard,Wholesale,Abuja,4,35.51,142.04
+TX-00034,2025-06-28,Globex Ltd,Monitor,Wholesale,Abuja,2,241.14,482.28
+TX-00035,2025-05-20,Acme Corp,Phone,Wholesale,Rivers,1,434.68,434.68
+TX-00036,2024-10-08,Acme Corp,Phone,Retail,Oyo,5,466.26,2331.3
+TX-00037,2024-02-18,Umbrella Inc,Monitor,Online,Lagos,3,205.3,615.9
+TX-00038,2024-10-26,Globex Ltd,Keyboard,Online,Abuja,5,33.11,165.55
+TX-00039,2024-04-29,Umbrella Inc,Monitor,Retail,Kano,2,233.44,466.88
+TX-00040,2024-07-21,Stark Industries,Keyboard,Wholesale,Kano,3,31.99,95.97
+TX-00041,2024-04-26,Globex Ltd,Keyboard,Online,Kano,5,32.07,160.35
+TX-00042,2025-06-09,Umbrella Inc,Tablet,Retail,Kano,1,281.05,281.05
+TX-00043,2024-06-13,Initech,Laptop,Retail,Lagos,5,1225.98,6129.9
+TX-00044,2024-04-23,Globex Ltd,Monitor,Wholesale,Abuja,2,211.53,423.06
+TX-00045,2024-04-09,Globex Ltd,Tablet,Retail,Oyo,1,293.33,293.33
+TX-00046,2024-06-14,Globex Ltd,Tablet,Retail,Abuja,1,333.34,333.34
+TX-00047,2025-02-10,Acme Corp,Keyboard,Online,Rivers,3,35.63,106.89
+TX-00048,2024-10-29,Initech,Laptop,Retail,Lagos,1,1291.43,1291.43
+TX-00049,2024-06-16,Stark Industries,Monitor,Retail,Rivers,1,199.77,199.77
+TX-00050,2024-10-04,Stark Industries,Keyboard,Wholesale,Kano,1,34.14,34.14
+TX-00051,2024-10-22,Umbrella Inc,Laptop,Wholesale,Abuja,1,1263.29,1263.29
+TX-00052,2024-02-25,Globex Ltd,Laptop,Wholesale,Kano,2,1205.79,2411.58
+TX-00053,2024-04-06,Umbrella Inc,Keyboard,Wholesale,Lagos,2,37.4,74.8
+TX-00054,2024-07-03,Initech,Phone,Retail,Lagos,2,416.86,833.72
+TX-00055,2024-06-01,Acme Corp,Laptop,Wholesale,Lagos,5,1263.41,6317.05
+TX-00056,2024-08-26,Initech,Monitor,Online,Abuja,4,201.26,805.04
+TX-00057,2025-05-29,Globex Ltd,Monitor,Wholesale,Kano,5,202.0,1010.0
+TX-00058,2024-04-12,Umbrella Inc,Tablet,Online,Oyo,4,291.92,1167.68
+TX-00059,2024-09-11,Globex Ltd,Laptop,Online,Rivers,2,1194.1,2388.2
+TX-00060,2024-03-20,Globex Ltd,Tablet,Wholesale,Kano,5,335.86,1679.3
+TX-00061,2024-03-15,Globex Ltd,Laptop,Retail,Rivers,4,1174.9,4699.6
+TX-00062,2024-04-09,Acme Corp,Tablet,Retail,Lagos,3,309.73,929.19
+TX-00063,2024-02-21,Initech,Phone,Retail,Kano,3,422.07,1266.21
+TX-00064,2024-10-29,Globex Ltd,Keyboard,Online,Rivers,1,35.54,35.54
+TX-00065,2024-11-08,Stark Industries,Laptop,Online,Rivers,3,1173.42,3520.26
+TX-00066,2024-01-28,Initech,Monitor,Online,Kano,1,239.52,239.52
+TX-00067,2025-01-23,Acme Corp,Tablet,Retail,Rivers,1,330.76,330.76
+TX-00068,2024-03-16,Acme Corp,Monitor,Online,Lagos,2,221.69,443.38
+TX-00069,2024-09-19,Acme Corp,Laptop,Retail,Lagos,2,1162.45,2324.9
+TX-00070,2025-01-13,Umbrella Inc,Phone,Wholesale,Abuja,4,412.29,1649.16
+TX-00071,2024-09-26,Initech,Monitor,Online,Rivers,5,237.79,1188.95
+TX-00072,2024-02-04,Globex Ltd,Keyboard,Retail,Rivers,5,33.2,166.0
+TX-00073,2024-11-10,Stark Industries,Tablet,Online,Oyo,1,295.8,295.8
+TX-00074,2025-06-18,Acme Corp,Laptop,Wholesale,Oyo,4,1239.64,4958.56
+TX-00075,2024-05-04,Acme Corp,Keyboard,Retail,Rivers,1,36.94,36.94
+TX-00076,2024-11-24,Stark Industries,Monitor,Wholesale,Kano,4,232.94,931.76
+TX-00077,2025-02-11,Globex Ltd,Tablet,Wholesale,Lagos,1,335.8,335.8
+TX-00078,2024-12-12,Stark Industries,Keyboard,Wholesale,Lagos,4,36.7,146.8
+TX-00079,2024-05-12,Umbrella Inc,Phone,Retail,Kano,1,455.68,455.68
+TX-00080,2024-05-04,Initech,Tablet,Online,Kano,5,280.1,1400.5
+TX-00081,2024-10-20,Globex Ltd,Phone,Wholesale,Kano,1,494.76,494.76
+TX-00082,2024-04-17,Initech,Keyboard,Retail,Kano,2,36.44,72.88
+TX-00083,2025-06-23,Initech,Monitor,Wholesale,Rivers,1,201.42,201.42
+TX-00084,2024-02-05,Stark Industries,Laptop,Retail,Lagos,3,1254.63,3763.89
+TX-00085,2024-10-24,Stark Industries,Monitor,Online,Abuja,4,203.65,814.6
+TX-00086,2024-09-15,Stark Industries,Tablet,Wholesale,Rivers,3,330.36,991.08
+TX-00087,2024-07-13,Initech,Laptop,Online,Oyo,4,1147.98,4591.92
+TX-00088,2025-06-12,Acme Corp,Tablet,Wholesale,Kano,2,317.05,634.1
+TX-00089,2024-12-11,Umbrella Inc,Monitor,Online,Oyo,2,223.21,446.42
+TX-00090,2025-04-13,Acme Corp,Phone,Online,Lagos,4,412.96,1651.84
+TX-00091,2024-11-01,Globex Ltd,Laptop,Online,Lagos,1,1266.4,1266.4
+TX-00092,2024-07-13,Acme Corp,Keyboard,Online,Oyo,3,32.71,98.13
+TX-00093,2024-08-11,Initech,Keyboard,Retail,Abuja,1,38.26,38.26
+TX-00094,2024-09-13,Umbrella Inc,Tablet,Wholesale,Oyo,1,306.47,306.47
+TX-00095,2024-02-14,Initech,Keyboard,Wholesale,Oyo,2,33.94,67.88
+TX-00096,2025-06-19,Stark Industries,Laptop,Wholesale,Abuja,2,1274.63,2549.26
+TX-00097,2024-06-29,Stark Industries,Monitor,Retail,Oyo,2,224.56,449.12
+TX-00098,2024-12-18,Globex Ltd,Phone,Retail,Kano,1,459.53,459.53
+TX-00099,2024-10-26,Initech,Phone,Wholesale,Kano,1,453.05,453.05
+TX-00100,2024-10-29,Acme Corp,Keyboard,Retail,Rivers,1,36.59,36.59
+TX-00101,2024-04-04,Umbrella Inc,Laptop,Retail,Abuja,2,1089.66,2179.32
+TX-00102,2025-01-21,Initech,Tablet,Online,Lagos,5,302.53,1512.65
+TX-00103,2024-04-10,Acme Corp,Keyboard,Retail,Rivers,2,31.94,63.88
+TX-00104,2024-05-07,Stark Industries,Keyboard,Retail,Rivers,5,33.16,165.8
+TX-00105,2024-05-12,Initech,Monitor,Wholesale,Lagos,2,203.94,407.88
+TX-00106,2024-09-09,Umbrella Inc,Tablet,Wholesale,Oyo,5,295.26,1476.3
+TX-00107,2025-01-28,Acme Corp,Laptop,Online,Rivers,3,1152.79,3458.37
+TX-00108,2024-03-08,Umbrella Inc,Monitor,Online,Rivers,2,219.04,438.08
+TX-00109,2024-03-12,Initech,Tablet,Online,Oyo,1,286.87,286.87
+TX-00110,2024-03-07,Acme Corp,Keyboard,Wholesale,Kano,5,38.34,191.7
+TX-00111,2025-06-21,Umbrella Inc,Phone,Wholesale,Abuja,4,423.23,1692.92
+TX-00112,2024-08-13,Globex Ltd,Phone,Online,Abuja,2,470.54,941.08
+TX-00113,2024-01-22,Acme Corp,Laptop,Online,Rivers,5,1189.83,5949.15
+TX-00114,2025-01-15,Umbrella Inc,Phone,Retail,Kano,2,456.26,912.52
+TX-00115,2024-06-02,Acme Corp,Tablet,Wholesale,Rivers,3,322.25,966.75
+TX-00116,2025-02-28,Initech,Keyboard,Wholesale,Kano,5,37.39,186.95
+TX-00117,2025-02-02,Umbrella Inc,Keyboard,Wholesale,Rivers,4,37.39,149.56
+TX-00118,2024-06-25,Acme Corp,Keyboard,Online,Rivers,4,31.5,126.0
+TX-00119,2024-08-15,Initech,Laptop,Retail,Rivers,1,1118.26,1118.26
+TX-00120,2024-09-28,Initech,Monitor,Online,Kano,3,215.65,646.95
+TX-00121,2024-10-11,Umbrella Inc,Laptop,Wholesale,Rivers,5,1191.28,5956.4
+TX-00122,2024-02-19,Stark Industries,Laptop,Wholesale,Abuja,3,1216.03,3648.09
+TX-00123,2025-04-23,Globex Ltd,Tablet,Online,Oyo,2,328.33,656.66
+TX-00124,2025-06-28,Initech,Monitor,Online,Rivers,3,232.02,696.06
+TX-00125,2024-09-10,Umbrella Inc,Phone,Online,Kano,1,425.15,425.15
+TX-00126,2024-07-07,Acme Corp,Monitor,Online,Lagos,2,213.01,426.02
+TX-00127,2024-09-25,Umbrella Inc,Monitor,Wholesale,Rivers,4,207.47,829.88
+TX-00128,2025-03-14,Stark Industries,Phone,Retail,Abuja,2,463.72,927.44
+TX-00129,2024-05-26,Umbrella Inc,Keyboard,Retail,Oyo,2,35.86,71.72
+TX-00130,2025-04-20,Globex Ltd,Laptop,Wholesale,Abuja,4,1317.94,5271.76
+TX-00131,2024-11-03,Stark Industries,Tablet,Wholesale,Abuja,4,316.01,1264.04
+TX-00132,2025-04-10,Globex Ltd,Monitor,Retail,Lagos,1,219.29,219.29
+TX-00133,2024-11-17,Acme Corp,Monitor,Online,Kano,1,214.76,214.76
+TX-00134,2024-01-01,Acme Corp,Phone,Wholesale,Kano,5,443.67,2218.35
+TX-00135,2024-09-16,Acme Corp,Laptop,Wholesale,Rivers,2,1309.12,2618.24
+TX-00136,2024-02-09,Globex Ltd,Phone,Wholesale,Kano,1,474.03,474.03
+TX-00137,2024-01-07,Globex Ltd,Laptop,Retail,Abuja,2,1204.1,2408.2
+TX-00138,2024-12-21,Initech,Monitor,Retail,Kano,3,234.46,703.38
+TX-00139,2024-02-12,Globex Ltd,Phone,Retail,Abuja,4,414.42,1657.68
+TX-00140,2025-04-27,Initech,Keyboard,Wholesale,Rivers,3,32.8,98.4
+TX-00141,2024-01-30,Initech,Monitor,Wholesale,Oyo,4,198.64,794.56
+TX-00142,2024-01-29,Umbrella Inc,Phone,Wholesale,Rivers,3,414.73,1244.19
+TX-00143,2025-01-09,Stark Industries,Phone,Wholesale,Rivers,2,438.54,877.08
+TX-00144,2024-09-28,Umbrella Inc,Keyboard,Wholesale,Kano,3,37.92,113.76
+TX-00145,2024-03-21,Acme Corp,Laptop,Online,Abuja,3,1280.44,3841.32
+TX-00146,2025-02-02,Initech,Phone,Online,Kano,2,415.03,830.06
+TX-00147,2025-02-10,Globex Ltd,Phone,Retail,Lagos,2,454.8,909.6
+TX-00148,2025-05-24,Globex Ltd,Keyboard,Wholesale,Kano,2,34.14,68.28
+TX-00149,2024-06-07,Acme Corp,Tablet,Retail,Rivers,1,319.7,319.7
+TX-00150,2024-10-21,Initech,Monitor,Retail,Oyo,2,200.63,401.26
+TX-00151,2024-03-04,Globex Ltd,Laptop,Retail,Rivers,3,1302.19,3906.57
+TX-00152,2024-06-29,Acme Corp,Phone,Wholesale,Oyo,5,412.55,2062.75
+TX-00153,2025-01-03,Globex Ltd,Laptop,Online,Oyo,3,1197.51,3592.53
+TX-00154,2025-04-09,Initech,Laptop,Online,Abuja,4,1275.64,5102.56
+TX-00155,2024-10-15,Stark Industries,Monitor,Wholesale,Lagos,2,237.1,474.2
+TX-00156,2024-07-29,Acme Corp,Laptop,Wholesale,Oyo,3,1313.18,3939.54
+TX-00157,2024-07-21,Initech,Phone,Online,Abuja,2,407.82,815.64
+TX-00158,2024-09-11,Acme Corp,Phone,Online,Lagos,1,420.29,420.29
+TX-00159,2024-10-02,Initech,Phone,Online,Rivers,1,406.71,406.71
+TX-00160,2025-03-14,Globex Ltd,Monitor,Online,Abuja,4,224.38,897.52
+TX-00161,2024-03-19,Initech,Tablet,Wholesale,Kano,4,298.88,1195.52
+TX-00162,2024-08-09,Globex Ltd,Keyboard,Wholesale,Lagos,3,35.69,107.07
+TX-00163,2024-08-29,Stark Industries,Tablet,Online,Abuja,3,325.43,976.29
+TX-00164,2024-08-04,Acme Corp,Keyboard,Online,Lagos,5,34.41,172.05
+TX-00165,2024-07-06,Globex Ltd,Monitor,Online,Kano,1,232.85,232.85
+TX-00166,2024-09-28,Acme Corp,Monitor,Online,Kano,1,223.87,223.87
+TX-00167,2025-03-27,Stark Industries,Tablet,Wholesale,Abuja,5,280.12,1400.6
+TX-00168,2025-06-15,Umbrella Inc,Keyboard,Wholesale,Kano,5,38.3,191.5
+TX-00169,2025-05-04,Globex Ltd,Monitor,Wholesale,Oyo,5,213.15,1065.75
+TX-00170,2024-03-12,Globex Ltd,Phone,Online,Oyo,2,411.15,822.3
+TX-00171,2025-03-05,Initech,Tablet,Retail,Lagos,2,311.45,622.9
+TX-00172,2024-02-23,Acme Corp,Monitor,Online,Oyo,2,227.53,455.06
+TX-00173,2024-06-07,Umbrella Inc,Tablet,Wholesale,Rivers,3,301.4,904.2
+TX-00174,2024-09-05,Globex Ltd,Monitor,Retail,Rivers,2,213.11,426.22
+TX-00175,2024-04-14,Umbrella Inc,Laptop,Online,Oyo,5,1201.71,6008.55
+TX-00176,2025-04-15,Globex Ltd,Monitor,Wholesale,Kano,3,226.51,679.53
+TX-00177,2024-10-14,Acme Corp,Keyboard,Online,Rivers,1,35.15,35.15
+TX-00178,2024-10-05,Stark Industries,Monitor,Online,Lagos,2,225.36,450.72
+TX-00179,2024-07-05,Stark Industries,Monitor,Online,Rivers,5,235.22,1176.1
+TX-00180,2024-04-15,Umbrella Inc,Laptop,Wholesale,Lagos,1,1270.56,1270.56
+TX-00181,2025-02-12,Stark Industries,Monitor,Wholesale,Oyo,3,227.26,681.78
+TX-00182,2025-04-10,Stark Industries,Monitor,Wholesale,Oyo,1,224.94,224.94
+TX-00183,2024-04-15,Acme Corp,Keyboard,Online,Lagos,2,33.91,67.82
+TX-00184,2024-08-01,Globex Ltd,Laptop,Retail,Oyo,3,1295.17,3885.51
+TX-00185,2025-04-18,Initech,Phone,Online,Lagos,3,424.66,1273.98
+TX-00186,2025-01-25,Globex Ltd,Laptop,Retail,Oyo,5,1100.8,5504.0
+TX-00187,2025-03-13,Initech,Tablet,Online,Lagos,2,291.98,583.96
+TX-00188,2024-05-27,Globex Ltd,Phone,Online,Oyo,3,475.64,1426.92
+TX-00189,2024-10-26,Umbrella Inc,Phone,Wholesale,Kano,4,427.23,1708.92
+TX-00190,2024-11-29,Globex Ltd,Keyboard,Online,Abuja,5,34.52,172.6
+TX-00191,2025-05-08,Initech,Laptop,Wholesale,Rivers,2,1177.93,2355.86
+TX-00192,2025-06-11,Acme Corp,Monitor,Retail,Kano,3,201.32,603.96
+TX-00193,2025-03-13,Stark Industries,Tablet,Wholesale,Lagos,5,280.33,1401.65
+TX-00194,2025-02-24,Umbrella Inc,Laptop,Online,Lagos,1,1186.0,1186.0
+TX-00195,2025-02-01,Globex Ltd,Laptop,Wholesale,Kano,1,1139.56,1139.56
+TX-00196,2024-12-31,Acme Corp,Laptop,Wholesale,Oyo,3,1171.9,3515.7
+TX-00197,2025-02-26,Stark Industries,Monitor,Wholesale,Abuja,1,231.2,231.2
+TX-00198,2024-11-24,Globex Ltd,Laptop,Retail,Rivers,1,1295.03,1295.03
+TX-00199,2025-04-15,Initech,Phone,Retail,Oyo,2,447.53,895.06
+TX-00200,2025-06-09,Acme Corp,Laptop,Wholesale,Oyo,1,1097.7,1097.7
+TX-00201,2025-04-19,Acme Corp,Keyboard,Retail,Lagos,5,37.24,186.2
+TX-00202,2025-01-20,Initech,Laptop,Online,Lagos,2,1286.64,2573.28
+TX-00203,2025-02-09,Acme Corp,Keyboard,Wholesale,Kano,5,34.86,174.3
+TX-00204,2024-08-09,Globex Ltd,Phone,Retail,Abuja,4,452.71,1810.84
+TX-00205,2025-04-07,Stark Industries,Phone,Online,Oyo,4,450.01,1800.04
+TX-00206,2024-08-22,Globex Ltd,Phone,Wholesale,Rivers,5,418.89,2094.45
+TX-00207,2024-10-12,Initech,Laptop,Online,Abuja,2,1085.1,2170.2
+TX-00208,2024-11-13,Acme Corp,Monitor,Retail,Oyo,4,222.92,891.68
+TX-00209,2024-05-11,Initech,Phone,Online,Lagos,3,425.41,1276.23
+TX-00210,2024-12-16,Stark Industries,Laptop,Retail,Abuja,4,1203.08,4812.32
+TX-00211,2024-03-09,Initech,Keyboard,Wholesale,Oyo,2,36.87,73.74
+TX-00212,2024-04-20,Acme Corp,Laptop,Retail,Oyo,5,1296.36,6481.8
+TX-00213,2024-10-23,Initech,Monitor,Wholesale,Kano,1,212.39,212.39
+TX-00214,2024-10-20,Acme Corp,Phone,Online,Oyo,2,464.08,928.16
+TX-00215,2024-11-04,Stark Industries,Tablet,Retail,Lagos,4,311.33,1245.32
+TX-00216,2025-01-04,Acme Corp,Laptop,Wholesale,Rivers,2,1258.25,2516.5
+TX-00217,2025-05-17,Globex Ltd,Keyboard,Wholesale,Rivers,4,32.0,128.0
+TX-00218,2025-05-11,Acme Corp,Tablet,Online,Oyo,5,295.7,1478.5
+TX-00219,2024-08-22,Initech,Laptop,Retail,Oyo,5,1089.55,5447.75
+TX-00220,2025-01-27,Umbrella Inc,Tablet,Online,Kano,2,334.08,668.16
+TX-00221,2025-04-04,Acme Corp,Monitor,Wholesale,Lagos,5,212.82,1064.1
+TX-00222,2024-09-02,Initech,Phone,Wholesale,Rivers,3,440.46,1321.38
+TX-00223,2024-03-13,Initech,Phone,Retail,Oyo,2,457.31,914.62
+TX-00224,2025-03-16,Globex Ltd,Tablet,Online,Kano,2,290.26,580.52
+TX-00225,2024-01-04,Initech,Tablet,Retail,Lagos,1,324.01,324.01
+TX-00226,2024-07-16,Stark Industries,Monitor,Retail,Kano,3,229.25,687.75
+TX-00227,2024-08-27,Acme Corp,Laptop,Online,Rivers,5,1145.74,5728.7
+TX-00228,2024-02-19,Umbrella Inc,Phone,Online,Kano,1,411.77,411.77
+TX-00229,2024-09-12,Initech,Tablet,Wholesale,Abuja,5,338.97,1694.85
+TX-00230,2024-07-26,Umbrella Inc,Monitor,Retail,Rivers,2,209.26,418.52
+TX-00231,2025-06-16,Globex Ltd,Monitor,Wholesale,Abuja,3,213.34,640.02
+TX-00232,2025-03-04,Initech,Tablet,Wholesale,Abuja,2,302.13,604.26
+TX-00233,2025-01-01,Globex Ltd,Keyboard,Online,Rivers,3,37.48,112.44
+TX-00234,2024-10-29,Umbrella Inc,Keyboard,Online,Oyo,1,33.58,33.58
+TX-00235,2025-02-04,Acme Corp,Monitor,Wholesale,Abuja,1,215.64,215.64
+TX-00236,2025-05-20,Stark Industries,Monitor,Wholesale,Oyo,2,200.36,400.72
+TX-00237,2024-02-29,Initech,Tablet,Wholesale,Abuja,2,281.14,562.28
+TX-00238,2024-09-22,Initech,Laptop,Retail,Oyo,5,1153.76,5768.8
+TX-00239,2024-06-25,Globex Ltd,Phone,Online,Oyo,1,415.86,415.86
+TX-00240,2025-06-03,Globex Ltd,Phone,Online,Rivers,2,454.89,909.78
+TX-00241,2024-01-27,Initech,Keyboard,Retail,Rivers,2,37.29,74.58
+TX-00242,2025-01-07,Initech,Phone,Wholesale,Abuja,1,422.48,422.48
+TX-00243,2024-10-03,Stark Industries,Laptop,Wholesale,Lagos,3,1149.33,3447.99
+TX-00244,2024-01-02,Umbrella Inc,Monitor,Online,Oyo,1,212.77,212.77
+TX-00245,2025-03-19,Umbrella Inc,Keyboard,Online,Rivers,2,32.79,65.58
+TX-00246,2025-01-27,Initech,Monitor,Wholesale,Abuja,2,219.15,438.3
+TX-00247,2024-09-23,Acme Corp,Monitor,Wholesale,Lagos,2,223.84,447.68
+TX-00248,2024-10-28,Globex Ltd,Laptop,Wholesale,Abuja,4,1285.17,5140.68
+TX-00249,2024-11-12,Acme Corp,Monitor,Online,Lagos,1,198.63,198.63
+TX-00250,2025-01-20,Initech,Tablet,Retail,Oyo,1,282.24,282.24
+TX-00251,2024-05-28,Umbrella Inc,Monitor,Retail,Lagos,1,221.66,221.66
+TX-00252,2024-03-02,Umbrella Inc,Monitor,Retail,Lagos,2,234.8,469.6
+TX-00253,2024-06-28,Acme Corp,Phone,Wholesale,Abuja,1,409.38,409.38
+TX-00254,2024-08-19,Initech,Phone,Wholesale,Oyo,3,424.68,1274.04
+TX-00255,2024-09-18,Acme Corp,Keyboard,Retail,Lagos,5,32.35,161.75
+TX-00256,2024-01-08,Umbrella Inc,Laptop,Wholesale,Abuja,3,1232.7,3698.1
+TX-00257,2024-04-24,Acme Corp,Tablet,Retail,Abuja,2,307.3,614.6
+TX-00258,2025-04-15,Umbrella Inc,Laptop,Wholesale,Kano,1,1290.56,1290.56
+TX-00259,2024-11-05,Globex Ltd,Keyboard,Wholesale,Oyo,3,31.69,95.07
+TX-00260,2024-04-27,Stark Industries,Monitor,Retail,Oyo,1,200.52,200.52
+TX-00261,2024-02-11,Globex Ltd,Tablet,Retail,Rivers,5,279.62,1398.1
+TX-00262,2024-03-13,Acme Corp,Keyboard,Wholesale,Kano,2,36.86,73.72
+TX-00263,2024-07-21,Initech,Monitor,Wholesale,Abuja,3,239.68,719.04
+TX-00264,2024-06-07,Umbrella Inc,Tablet,Wholesale,Rivers,1,286.99,286.99
+TX-00265,2024-06-25,Stark Industries,Keyboard,Retail,Abuja,1,34.26,34.26
+TX-00266,2024-10-27,Umbrella Inc,Monitor,Retail,Oyo,2,203.05,406.1
+TX-00267,2024-09-06,Initech,Tablet,Online,Abuja,5,321.58,1607.9
+TX-00268,2024-09-01,Stark Industries,Phone,Wholesale,Abuja,3,425.51,1276.53
+TX-00269,2025-03-05,Acme Corp,Tablet,Wholesale,Oyo,4,336.31,1345.24
+TX-00270,2024-02-11,Acme Corp,Keyboard,Online,Kano,2,36.42,72.84
+TX-00271,2024-07-30,Initech,Tablet,Online,Abuja,3,279.49,838.47
+TX-00272,2024-07-06,Umbrella Inc,Monitor,Wholesale,Lagos,2,200.42,400.84
+TX-00273,2025-03-18,Initech,Laptop,Retail,Oyo,4,1163.13,4652.52
+TX-00274,2024-05-17,Acme Corp,Laptop,Retail,Rivers,2,1298.22,2596.44
+TX-00275,2024-09-25,Acme Corp,Keyboard,Wholesale,Oyo,1,35.59,35.59
+TX-00276,2024-03-25,Umbrella Inc,Laptop,Wholesale,Kano,4,1139.07,4556.28
+TX-00277,2025-03-26,Acme Corp,Monitor,Online,Abuja,2,202.85,405.7
+TX-00278,2024-04-24,Acme Corp,Tablet,Retail,Kano,3,301.09,903.27
+TX-00279,2025-04-02,Initech,Keyboard,Wholesale,Kano,1,36.72,36.72
+TX-00280,2025-01-27,Acme Corp,Monitor,Wholesale,Rivers,2,217.36,434.72
+TX-00281,2024-05-24,Initech,Phone,Wholesale,Rivers,2,411.63,823.26
+TX-00282,2024-06-06,Stark Industries,Keyboard,Online,Kano,1,33.91,33.91
+TX-00283,2025-02-25,Globex Ltd,Phone,Wholesale,Abuja,1,429.17,429.17
+TX-00284,2024-10-22,Acme Corp,Monitor,Online,Lagos,5,206.4,1032.0
+TX-00285,2024-11-19,Acme Corp,Laptop,Retail,Abuja,4,1272.36,5089.44
+TX-00286,2025-01-17,Acme Corp,Phone,Retail,Abuja,3,479.31,1437.93
+TX-00287,2024-01-16,Globex Ltd,Laptop,Retail,Rivers,3,1180.97,3542.91
+TX-00288,2024-07-22,Umbrella Inc,Tablet,Online,Abuja,4,303.27,1213.08
+TX-00289,2025-03-24,Globex Ltd,Keyboard,Retail,Oyo,4,36.31,145.24
+TX-00290,2024-02-06,Globex Ltd,Keyboard,Wholesale,Lagos,4,32.8,131.2
+TX-00291,2024-09-02,Umbrella Inc,Tablet,Retail,Lagos,3,330.79,992.37
+TX-00292,2024-02-09,Initech,Phone,Retail,Kano,3,428.77,1286.31
+TX-00293,2025-04-03,Stark Industries,Tablet,Retail,Oyo,3,307.18,921.54
+TX-00294,2024-05-14,Acme Corp,Laptop,Retail,Rivers,4,1210.21,4840.84
+TX-00295,2025-05-07,Acme Corp,Laptop,Online,Oyo,1,1139.9,1139.9
+TX-00296,2024-04-05,Acme Corp,Tablet,Retail,Lagos,3,318.83,956.49
+TX-00297,2024-08-10,Initech,Keyboard,Wholesale,Kano,5,38.45,192.25
+TX-00298,2024-02-01,Globex Ltd,Tablet,Online,Oyo,1,295.27,295.27
+TX-00299,2024-02-15,Globex Ltd,Tablet,Retail,Lagos,2,284.15,568.3
+TX-00300,2025-01-31,Acme Corp,Phone,Online,Abuja,5,415.41,2077.05

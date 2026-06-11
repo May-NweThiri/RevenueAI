@@ -1,0 +1,401 @@
+Order ID,Order Date,Customer Name,Product,Category,State,Quantity,Unit Price,Revenue
+ORD-0001,2024-02-19,ACME CORP,Keyboard,Accessories,OYO,2,34.26,68.52
+ORD-0002,2025-06-03,globex ltd,Keyboard,Accessories,Lagos,5,31.91,159.55
+ORD-0003,2024-04-02,Stark Industries,Monitor,Computers,ABUJA,4,201.07,804.28
+ORD-0004,2024-03-04,Stark Industries,Tablet,Electronics,OYO,1,337.74,337.74
+ORD-0005,2024-05-16,  Initech ,phone,Electronics,Abuja,2,409.19,818.38
+ORD-0006,2024-07-04,Acme Corp,Tablet,Electronics,Oyo,1,314.4,314.4
+ORD-0007,2024-03-05,STARK INDUSTRIES,Laptop,Computers,Lagos,3,1103.38,3310.14
+ORD-0008,2025-03-13,Initech,Laptop,Computers,Abuja,4,1243.3,
+ORD-0009,2024-07-03,Globex Ltd,Monitor,Computers,Lagos,3,211.19,633.57
+ORD-0010,2024-12-17,umbrella inc,Keyboard,Accessories,RIVERS,5,34.97,174.85
+ORD-0011,2024-06-17,Initech,Phone,Electronics,kano,1,451.07,451.07
+ORD-0012,2024-03-20,Stark Industries,Monitor,Computers,Oyo,1,240.33,240.33
+ORD-0013,2025-04-12,Acme Corp,Keyboard,Accessories,Lagos,3,35.66,106.98
+ORD-0014,2024-11-13,Stark Industries,Monitor,Computers,abuja,1,200.67,200.67
+ORD-0015,2025-04-17,Initech,Monitor,Computers,Kano,3,198.99,596.97
+ORD-0016,2024-10-21,Globex Ltd,PHONE,Electronics,Kano,4,410.31,1641.24
+ORD-0017,2025-04-04,Umbrella Inc,Monitor,Computers,Oyo,4,201.55,806.2
+ORD-0018,2024-10-12,  Umbrella Inc ,Laptop,Computers,RIVERS,4,1287.36,5149.44
+ORD-0019,2024-06-29,Globex Ltd,  Monitor ,Computers,Kano,2,204.64,409.28
+ORD-0020,2024-07-05,initech,Laptop,Computers,Rivers,1,1196.39,1196.39
+ORD-0021,2024-11-22,Globex Ltd,  Laptop ,Computers,Oyo,4,1208.3,4833.2
+ORD-0022,2025-02-05,Umbrella Inc,Phone,Electronics,Abuja,4,485.96,1943.84
+ORD-0023,2024-03-04,globex ltd,Phone,Electronics,Lagos,4,462.09,1848.36
+ORD-0024,2024-02-23,Acme Corp,Monitor,Computers,Lagos,2,202.84,405.68
+ORD-0025,2025-01-07,Stark Industries,Laptop,Computers,Lagos,5,1104.35,5521.75
+ORD-0026,2024-09-15,initech,LAPTOP,Computers,Oyo,5,1170.3,5851.5
+ORD-0027,2025-05-14,  Umbrella Inc ,Monitor,Computers,ABUJA,1,203.08,203.08
+ORD-0028,2024-12-16,Initech,Keyboard,Accessories,ABUJA,1,32.51,32.51
+ORD-0029,2025-06-24,INITECH,Laptop,Computers,Kano,5,1085.54,5427.7
+ORD-0030,2024-11-01,Acme Corp,TABLET,Electronics,Rivers,1,326.0,326.0
+ORD-0031,2024-08-16,stark industries,Keyboard,Accessories,Oyo,2,33.99,67.98
+ORD-0032,2024-07-18,Globex Ltd,KEYBOARD,Accessories,Abuja,2,35.79,71.58
+ORD-0033,2024-12-30,Acme Corp,LAPTOP,Computers,Lagos,2,1204.23,2408.46
+ORD-0034,2024-12-18,UMBRELLA INC,monitor,Computers,Rivers,3,206.52,619.56
+ORD-0035,2025-04-26,  Globex Ltd ,PHONE,Electronics,Rivers,2,414.19,828.38
+ORD-0036,2024-01-02,UMBRELLA INC,  Monitor ,Computers,Rivers,5,241.35,1206.75
+ORD-0037,2024-07-23,Umbrella Inc,Phone,Electronics,kano,1,486.88,
+ORD-0038,2025-02-09,Umbrella Inc,Keyboard,Accessories,Abuja,1,37.11,37.11
+ORD-0039,2024-05-10,acme corp,  Phone ,Electronics,Kano,2,420.3,840.6
+ORD-0040,2025-04-30,Initech,Monitor,Computers,Kano,2,224.91,449.82
+ORD-0041,2024-04-15,stark industries,  Tablet ,Electronics,KANO,2,280.33,560.66
+ORD-0042,2024-08-05,Initech,Laptop,Computers,Oyo,2,1086.72,2173.44
+ORD-0043,2025-03-05,  Globex Ltd ,Tablet,Electronics,LAGOS,3,295.08,885.24
+ORD-0044,2025-06-13,Umbrella Inc,  Keyboard ,Accessories,Oyo,4,36.14,144.56
+ORD-0045,2024-01-20,Umbrella Inc,Tablet,Electronics,KANO,2,311.46,622.92
+ORD-0046,2025-04-29,Stark Industries,Phone,Electronics,  Lagos ,2,420.51,841.02
+ORD-0047,2025-06-27,Stark Industries,phone,Electronics,ABUJA,3,466.41,1399.23
+ORD-0048,2024-10-10,ACME CORP,tablet,Electronics,LAGOS,1,294.41,294.41
+ORD-0049,2024-03-05,Umbrella Inc,Monitor,Computers,Rivers,5,199.23,996.15
+ORD-0050,2024-10-10,Umbrella Inc,tablet,Electronics,Oyo,5,310.75,1553.75
+ORD-0051,2025-06-19,INITECH,Monitor,Computers,Oyo,5,239.43,1197.15
+ORD-0052,2025-02-05,Umbrella Inc,MONITOR,Computers,Rivers,2,216.33,432.66
+ORD-0053,2024-11-06,acme corp,Laptop,Computers,Kano,4,1097.55,4390.2
+ORD-0054,2024-05-20,Umbrella Inc,KEYBOARD,Accessories,Kano,2,33.27,66.54
+ORD-0055,2024-06-15,GLOBEX LTD,PHONE,Electronics,KANO,4,484.64,1938.56
+ORD-0056,2025-03-07,GLOBEX LTD,Monitor,Computers,RIVERS,5,215.77,1078.85
+ORD-0057,2025-04-14,  Umbrella Inc ,PHONE,Electronics,Lagos,3,406.75,
+ORD-0058,2025-06-08,Acme Corp,Keyboard,Accessories,Lagos,5,35.87,179.35
+ORD-0059,2024-02-10,Globex Ltd,Phone,Electronics,Rivers,1,428.9,428.9
+ORD-0060,2025-06-11,Stark Industries,Monitor,Computers,ABUJA,3,215.86,647.58
+ORD-0061,2024-07-06,Umbrella Inc,KEYBOARD,Accessories,Lagos,1,33.45,33.45
+ORD-0062,2024-03-26,Stark Industries,Phone,Electronics,Kano,1,477.15,477.15
+ORD-0063,2024-12-13,Stark Industries,Keyboard,Accessories,ABUJA,1,34.68,34.68
+ORD-0064,2024-09-01,acme corp,Tablet,Electronics,Kano,2,281.68,563.36
+ORD-0065,2024-11-15,Initech,Phone,Electronics,OYO,2,423.16,846.32
+ORD-0066,2024-07-01,initech,Keyboard,Accessories,  Rivers ,4,35.0,140.0
+ORD-0067,2025-06-01,Stark Industries,keyboard,Accessories,kano,1,31.61,31.61
+ORD-0068,2024-04-18,Umbrella Inc,Monitor,Computers,abuja,2,239.12,478.24
+ORD-0069,2024-08-08,Globex Ltd,MONITOR,Computers,Rivers,5,211.54,1057.7
+ORD-0070,2024-02-25,Globex Ltd,Laptop,Computers,Lagos,4,1317.47,5269.88
+ORD-0071,2024-03-27,Umbrella Inc,Keyboard,Accessories,Oyo,4,32.64,130.56
+ORD-0072,2024-10-27,Acme Corp,Keyboard,Accessories,ABUJA,5,33.2,166.0
+ORD-0073,2024-09-26,Initech,Laptop,Computers,Rivers,3,1187.0,3561.0
+ORD-0074,2024-11-12,Globex Ltd,Keyboard,Accessories,Rivers,2,31.74,63.48
+ORD-0075,2025-05-01,Initech,Phone,Electronics,OYO,3,439.35,1318.05
+ORD-0076,2024-01-06,Acme Corp,  Laptop ,Computers,Rivers,2,1201.14,
+ORD-0077,2025-02-07,Acme Corp,LAPTOP,Computers,Rivers,4,1220.83,4883.32
+ORD-0078,2025-06-25,Globex Ltd,LAPTOP,Computers,OYO,1,1220.54,1220.54
+ORD-0079,2024-05-28,ACME CORP,Keyboard,Accessories,oyo,4,32.55,130.2
+ORD-0080,2025-06-20,Stark Industries,  Monitor ,Computers,  Oyo ,5,204.13,1020.65
+ORD-0081,2024-02-12,globex ltd,Tablet,Electronics,RIVERS,2,284.28,568.56
+ORD-0082,2024-01-20,  Stark Industries ,Monitor,Computers,Kano,4,222.58,890.32
+ORD-0083,2024-03-12,  Stark Industries ,Keyboard,Accessories,  Oyo ,1,34.7,34.7
+ORD-0084,2025-04-30,Initech,Tablet,Electronics,LAGOS,1,325.24,325.24
+ORD-0085,2025-04-16,UMBRELLA INC,  Laptop ,Computers,Abuja,2,1135.38,2270.76
+ORD-0086,2024-07-22,Acme Corp,Monitor,Computers,Oyo,3,231.75,695.25
+ORD-0087,2024-11-07,Stark Industries,keyboard,Accessories,OYO,3,36.06,108.18
+ORD-0088,2024-10-02,Acme Corp,Phone,Electronics,Kano,4,410.46,1641.84
+ORD-0089,2024-10-19,umbrella inc,Monitor,Computers,Abuja,3,229.19,687.57
+ORD-0090,2024-03-28,Umbrella Inc,PHONE,Electronics,Lagos,5,422.93,2114.65
+ORD-0091,2025-04-05,INITECH,MONITOR,Computers,Abuja,1,234.08,234.08
+ORD-0092,2024-05-25,Stark Industries,Laptop,Computers,Rivers,1,1219.55,1219.55
+ORD-0093,2025-06-04,initech,Laptop,Computers,Lagos,5,1276.85,6384.25
+ORD-0094,2025-05-12,Umbrella Inc,Keyboard,Accessories,  Lagos ,2,34.99,69.98
+ORD-0095,2025-02-19,initech,PHONE,Electronics,Kano,4,466.34,1865.36
+ORD-0096,2024-12-05,Acme Corp,Keyboard,Accessories,  Rivers ,4,33.71,134.84
+ORD-0097,2024-07-19,Acme Corp,  Monitor ,Computers,  Rivers ,1,239.35,239.35
+ORD-0098,2024-03-19,Initech,keyboard,Accessories,Abuja,1,34.25,34.25
+ORD-0099,2024-10-19,  Globex Ltd ,Phone,Electronics,KANO,3,414.15,1242.45
+ORD-0100,2025-01-17,Umbrella Inc,Monitor,Computers,  Lagos ,5,211.89,1059.45
+ORD-0101,2024-03-23,Acme Corp,MONITOR,Computers,Abuja,5,222.17,1110.85
+ORD-0102,2024-10-20,Umbrella Inc,TABLET,Electronics,LAGOS,2,318.96,637.92
+ORD-0103,2024-12-17,Initech,LAPTOP,Computers,Rivers,2,1193.32,2386.64
+ORD-0104,2024-11-04,UMBRELLA INC,Keyboard,Accessories,OYO,4,36.09,144.36
+ORD-0105,2024-06-14,Acme Corp,  Monitor ,Computers,  Kano ,1,205.36,205.36
+ORD-0106,2024-12-06,  Umbrella Inc ,Monitor,Computers,Abuja,5,207.68,1038.4
+ORD-0107,2024-06-27,Initech,Tablet,Electronics,Oyo,2,294.13,588.26
+ORD-0108,2024-07-25,Acme Corp,Keyboard,Accessories,Abuja,2,34.08,68.16
+ORD-0109,2024-10-03,Initech,monitor,Computers,Lagos,5,207.24,1036.2
+ORD-0110,2024-05-08,Stark Industries,  Keyboard ,Accessories,Oyo,5,38.27,191.35
+ORD-0111,2024-09-11,umbrella inc,LAPTOP,Computers,Abuja,1,1145.05,1145.05
+ORD-0112,2024-01-23,GLOBEX LTD,Monitor,Computers,Lagos,4,239.97,959.88
+ORD-0113,2024-03-15,  Umbrella Inc ,Monitor,Computers,Oyo,5,219.55,1097.75
+ORD-0114,2024-08-17,Globex Ltd,Monitor,Computers,Kano,2,232.46,464.92
+ORD-0115,2024-02-10,  Acme Corp ,Phone,Electronics,Kano,4,412.65,1650.6
+ORD-0116,2024-11-07,Globex Ltd,Tablet,Electronics,Rivers,1,319.02,319.02
+ORD-0117,2024-11-03,STARK INDUSTRIES,monitor,Computers,OYO,1,202.38,202.38
+ORD-0118,2024-01-02,Acme Corp,Monitor,Computers,oyo,3,207.84,623.52
+ORD-0119,2024-09-05,UMBRELLA INC,monitor,Computers,OYO,3,240.19,
+ORD-0120,2025-02-25,Initech,TABLET,Electronics,Lagos,2,280.82,561.64
+ORD-0121,2025-03-06,Acme Corp,LAPTOP,Computers,rivers,4,1292.36,
+ORD-0122,2024-02-04,  Initech ,  Monitor ,Computers,ABUJA,3,207.98,623.94
+ORD-0123,2024-10-26,Stark Industries,MONITOR,Computers,Lagos,2,198.3,396.6
+ORD-0124,2024-07-17,Globex Ltd,MONITOR,Computers,Abuja,2,211.72,423.44
+ORD-0125,2025-05-22,Stark Industries,Keyboard,Accessories,Kano,3,32.26,96.78
+ORD-0126,2024-02-27,STARK INDUSTRIES,Monitor,Computers,Kano,4,238.06,952.24
+ORD-0127,2024-05-25,Umbrella Inc,Phone,Electronics,  Lagos ,2,407.13,814.26
+ORD-0128,2024-11-17,ACME CORP,Phone,Electronics,LAGOS,2,440.4,880.8
+ORD-0129,2025-06-21,  Umbrella Inc ,Keyboard,Accessories,Lagos,2,32.8,65.6
+ORD-0130,2025-03-29,Globex Ltd,  Monitor ,Computers,Lagos,3,241.34,724.02
+ORD-0131,2025-03-06,acme corp,Phone,Electronics,Oyo,3,412.27,1236.81
+ORD-0132,2024-11-12,UMBRELLA INC,Monitor,Computers,Lagos,3,231.82,695.46
+ORD-0133,2025-04-02,Globex Ltd,Monitor,Computers,Rivers,2,214.4,428.8
+ORD-0134,2024-09-10,umbrella inc,  Monitor ,Computers,Lagos,1,225.79,225.79
+ORD-0135,2024-03-04,Initech,Phone,Electronics,KANO,4,410.63,1642.52
+ORD-0136,2024-10-05,Initech,PHONE,Electronics,Oyo,5,435.52,2177.6
+ORD-0137,2024-10-31,ACME CORP,Keyboard,Accessories,Oyo,3,37.97,113.91
+ORD-0138,2024-04-19,umbrella inc,phone,Electronics,Abuja,1,479.34,479.34
+ORD-0139,2024-05-15,Umbrella Inc,Keyboard,Accessories,Kano,4,37.2,148.8
+ORD-0140,2024-12-01,  Initech ,Keyboard,Accessories,Abuja,2,35.75,71.5
+ORD-0141,2025-02-05,globex ltd,Tablet,Electronics,Kano,1,310.74,310.74
+ORD-0142,2024-11-29,globex ltd,Phone,Electronics,  Abuja ,1,448.35,448.35
+ORD-0143,2024-08-01,ACME CORP,PHONE,Electronics,Abuja,3,461.21,1383.63
+ORD-0144,2025-03-02,  Umbrella Inc ,Monitor,Computers,Oyo,2,208.3,416.6
+ORD-0145,2024-05-04,  Initech ,  Laptop ,Computers,Rivers,5,1283.28,6416.4
+ORD-0146,2024-09-23,GLOBEX LTD,Tablet,Electronics,ABUJA,3,302.12,906.36
+ORD-0147,2024-10-15,  Stark Industries ,laptop,Computers,  Kano ,2,1136.52,2273.04
+ORD-0148,2024-09-08,Stark Industries,phone,Electronics,Oyo,4,427.65,1710.6
+ORD-0149,2024-04-14,Acme Corp,Phone,Electronics,Abuja,4,494.19,1976.76
+ORD-0150,2024-10-27,  Globex Ltd ,Monitor,Computers,LAGOS,3,199.78,599.34
+ORD-0151,2024-07-17,acme corp,LAPTOP,Computers,Rivers,5,1313.51,6567.55
+ORD-0152,2024-01-07,acme corp,Laptop,Computers,Oyo,4,1224.73,4898.92
+ORD-0153,2025-01-12,Initech,Tablet,Electronics,Kano,3,292.49,
+ORD-0154,2024-07-27,Acme Corp,Laptop,Computers,Rivers,3,1089.18,3267.54
+ORD-0155,2024-03-20,Globex Ltd,Keyboard,Accessories,Lagos,2,35.85,71.7
+ORD-0156,2024-04-13,  Umbrella Inc ,Tablet,Electronics,OYO,4,282.92,1131.68
+ORD-0157,2025-02-11,Initech,  Tablet ,Electronics,Abuja,1,319.49,319.49
+ORD-0158,2024-11-15,Stark Industries,Keyboard,Accessories,Rivers,4,38.17,152.68
+ORD-0159,2025-01-07,Globex Ltd,  Monitor ,Computers,Abuja,1,236.03,236.03
+ORD-0160,2025-03-20,GLOBEX LTD,Monitor,Computers,ABUJA,2,239.45,478.9
+ORD-0161,2025-01-08,Umbrella Inc,Phone,Electronics,Kano,4,457.0,
+ORD-0162,2025-02-10,ACME CORP,Phone,Electronics,OYO,1,454.64,454.64
+ORD-0163,2024-12-22,INITECH,Keyboard,Accessories,Kano,5,32.7,163.5
+ORD-0164,2025-05-17,Globex Ltd,Laptop,Computers,Rivers,1,1106.11,1106.11
+ORD-0165,2025-02-01,Acme Corp,Phone,Electronics,Oyo,4,433.31,1733.24
+ORD-0166,2024-07-19,Umbrella Inc,Laptop,Computers,Kano,2,1229.05,2458.1
+ORD-0167,2025-06-14,GLOBEX LTD,LAPTOP,Computers,Abuja,1,1175.94,1175.94
+ORD-0168,2024-07-16,ACME CORP,Phone,Electronics,OYO,2,427.24,854.48
+ORD-0169,2025-04-11,  Stark Industries ,Phone,Electronics,rivers,3,415.6,
+ORD-0170,2025-03-11,  Umbrella Inc ,Monitor,Computers,rivers,3,223.64,670.92
+ORD-0171,2024-01-04,stark industries,Tablet,Electronics,Abuja,4,290.08,1160.32
+ORD-0172,2025-04-14,GLOBEX LTD,Laptop,Computers,  Abuja ,4,1263.26,5053.04
+ORD-0173,2025-03-16,Initech,Phone,Electronics,Lagos,1,416.56,416.56
+ORD-0174,2024-02-11,Globex Ltd,tablet,Electronics,Lagos,5,319.74,1598.7
+ORD-0175,2025-05-31,Umbrella Inc,Keyboard,Accessories,Kano,5,32.06,160.3
+ORD-0176,2024-04-22,GLOBEX LTD,PHONE,Electronics,Kano,5,470.89,2354.45
+ORD-0177,2024-08-14,Acme Corp,Keyboard,Accessories,Rivers,2,36.3,72.6
+ORD-0178,2024-10-08,Umbrella Inc,Keyboard,Accessories,Kano,2,33.77,67.54
+ORD-0179,2024-09-26,  Stark Industries ,Tablet,Electronics,Oyo,4,291.92,1167.68
+ORD-0180,2024-07-05,Umbrella Inc,  Keyboard ,Accessories,Kano,3,31.76,95.28
+ORD-0181,2024-06-21,Initech,  Keyboard ,Accessories,LAGOS,3,37.77,113.31
+ORD-0182,2025-04-08,STARK INDUSTRIES,Phone,Electronics,Oyo,3,491.95,1475.85
+ORD-0183,2025-02-07,Initech,Phone,Electronics,Rivers,3,494.37,1483.11
+ORD-0184,2024-12-04,  Acme Corp ,Keyboard,Accessories,Abuja,5,32.52,162.6
+ORD-0185,2024-02-19,INITECH,Laptop,Computers,Oyo,5,1258.46,6292.3
+ORD-0186,2024-11-16,ACME CORP,  Keyboard ,Accessories,lagos,5,38.0,190.0
+ORD-0187,2025-03-18,Umbrella Inc,Laptop,Computers,OYO,3,1227.85,3683.55
+ORD-0188,2024-02-16,Acme Corp,Phone,Electronics,Lagos,2,448.96,897.92
+ORD-0189,2025-06-19,Initech,  Tablet ,Electronics,  Oyo ,3,297.83,893.49
+ORD-0190,2024-05-16,  Globex Ltd ,Monitor,Computers,Rivers,5,211.25,1056.25
+ORD-0191,2024-09-06,  Globex Ltd ,Monitor,Computers,Abuja,2,203.93,407.86
+ORD-0192,2024-10-03,Umbrella Inc,phone,Electronics,rivers,2,483.42,966.84
+ORD-0193,2025-03-30,STARK INDUSTRIES,Phone,Electronics,Oyo,5,485.34,2426.7
+ORD-0194,2024-01-01,Acme Corp,MONITOR,Computers,LAGOS,2,205.26,410.52
+ORD-0195,2024-06-12,Acme Corp,Phone,Electronics,Lagos,4,421.71,1686.84
+ORD-0196,2024-07-20,globex ltd,Tablet,Electronics,ABUJA,5,319.72,1598.6
+ORD-0197,2025-03-01,Stark Industries,  Tablet ,Electronics,Kano,5,318.85,1594.25
+ORD-0198,2024-02-19,Umbrella Inc,keyboard,Accessories,Oyo,1,33.6,33.6
+ORD-0199,2025-04-21,Acme Corp,MONITOR,Computers,ABUJA,4,230.79,923.16
+ORD-0200,2024-02-09,Acme Corp,Laptop,Computers,Rivers,1,1142.74,1142.74
+ORD-0201,2025-03-22,Stark Industries,KEYBOARD,Accessories,Rivers,1,33.36,33.36
+ORD-0202,2024-01-16,globex ltd,Laptop,Computers,rivers,1,1291.21,1291.21
+ORD-0203,2024-11-30,Globex Ltd,LAPTOP,Computers,Abuja,2,1259.08,2518.16
+ORD-0204,2025-04-25,umbrella inc,Tablet,Electronics,OYO,2,302.53,605.06
+ORD-0205,2024-08-27,  Stark Industries ,PHONE,Electronics,Rivers,1,444.35,444.35
+ORD-0206,2024-06-24,Globex Ltd,Monitor,Computers,Lagos,5,223.75,1118.75
+ORD-0207,2024-06-14,Initech,Phone,Electronics,Kano,1,460.98,460.98
+ORD-0208,2024-02-13,ACME CORP,Phone,Electronics,LAGOS,1,408.75,408.75
+ORD-0209,2025-06-30,ACME CORP,TABLET,Electronics,Abuja,3,291.36,874.08
+ORD-0210,2024-02-04,Acme Corp,laptop,Computers,Lagos,2,1128.76,2257.52
+ORD-0211,2024-04-10,Globex Ltd,  Keyboard ,Accessories,  Rivers ,4,32.2,128.8
+ORD-0212,2024-12-25,INITECH,Keyboard,Accessories,Rivers,4,33.33,133.32
+ORD-0213,2025-05-30,Umbrella Inc,Keyboard,Accessories,rivers,3,36.88,110.64
+ORD-0214,2025-06-15,Acme Corp,PHONE,Electronics,  Rivers ,4,407.81,1631.24
+ORD-0215,2024-04-03,STARK INDUSTRIES,Phone,Electronics,Rivers,5,455.95,2279.75
+ORD-0216,2024-10-22,  Acme Corp ,MONITOR,Computers,Lagos,1,221.04,221.04
+ORD-0217,2024-07-07,Umbrella Inc,Monitor,Computers,OYO,1,219.63,219.63
+ORD-0218,2024-06-11,Initech,TABLET,Electronics,  Kano ,3,314.84,944.52
+ORD-0219,2024-03-23,Umbrella Inc,  Laptop ,Computers,Oyo,4,1119.79,4479.16
+ORD-0220,2025-02-08,Acme Corp,keyboard,Accessories,  Abuja ,3,32.17,96.51
+ORD-0221,2024-09-26,umbrella inc,  Phone ,Electronics,OYO,3,423.55,1270.65
+ORD-0222,2024-08-27,Umbrella Inc,Laptop,Computers,Kano,4,1315.78,5263.12
+ORD-0223,2024-12-22,Stark Industries,Tablet,Electronics,  Rivers ,5,319.07,1595.35
+ORD-0224,2024-11-27,GLOBEX LTD,Laptop,Computers,Abuja,4,1238.9,4955.6
+ORD-0225,2024-12-08,UMBRELLA INC,Keyboard,Accessories,Kano,5,33.12,165.6
+ORD-0226,2024-06-07,globex ltd,Laptop,Computers,kano,3,1152.36,3457.08
+ORD-0227,2024-06-13,Globex Ltd,Keyboard,Accessories,Rivers,5,35.16,175.8
+ORD-0228,2024-04-14,Globex Ltd,keyboard,Accessories,ABUJA,1,32.65,32.65
+ORD-0229,2025-03-21,Initech,LAPTOP,Computers,Kano,3,1255.99,3767.97
+ORD-0230,2025-02-01,Umbrella Inc,PHONE,Electronics,Lagos,3,423.58,1270.74
+ORD-0231,2025-05-27,Initech,monitor,Computers,Abuja,4,228.51,914.04
+ORD-0232,2025-02-18,Acme Corp,Laptop,Computers,KANO,3,1224.89,3674.67
+ORD-0233,2025-03-07,globex ltd,Tablet,Electronics,Oyo,5,325.44,1627.2
+ORD-0234,2024-11-16,Initech,LAPTOP,Computers,lagos,1,1188.94,1188.94
+ORD-0235,2024-06-09,Initech,Laptop,Computers,Abuja,4,1251.16,5004.64
+ORD-0236,2025-02-23,Stark Industries,MONITOR,Computers,KANO,1,225.35,225.35
+ORD-0237,2025-05-16,Acme Corp,Keyboard,Accessories,Lagos,1,34.22,34.22
+ORD-0238,2024-07-23,Stark Industries,  Tablet ,Electronics,rivers,2,288.97,577.94
+ORD-0239,2025-05-02,stark industries,Tablet,Electronics,Lagos,4,312.54,1250.16
+ORD-0240,2025-04-12,globex ltd,  Keyboard ,Accessories,KANO,5,33.9,169.5
+ORD-0241,2024-12-30,ACME CORP,Tablet,Electronics,RIVERS,1,324.2,324.2
+ORD-0242,2024-03-17,UMBRELLA INC,  Monitor ,Computers,Abuja,4,200.71,802.84
+ORD-0243,2024-08-17,Initech,Keyboard,Accessories,abuja,5,33.36,166.8
+ORD-0244,2024-06-17,GLOBEX LTD,LAPTOP,Computers,Lagos,4,1190.91,4763.64
+ORD-0245,2024-08-19,globex ltd,Laptop,Computers,Rivers,4,1234.13,4936.52
+ORD-0246,2024-05-08,Umbrella Inc,  Monitor ,Computers,Rivers,4,241.83,967.32
+ORD-0247,2025-03-12,Globex Ltd,Keyboard,Accessories,Abuja,4,36.31,145.24
+ORD-0248,2024-11-05,Initech,Keyboard,Accessories,abuja,3,33.21,99.63
+ORD-0249,2025-01-06,GLOBEX LTD,MONITOR,Computers,RIVERS,5,226.04,1130.2
+ORD-0250,2024-11-28,Globex Ltd,PHONE,Electronics,  Oyo ,1,479.51,479.51
+ORD-0251,2024-08-02,Acme Corp,  Tablet ,Electronics,RIVERS,1,319.75,319.75
+ORD-0252,2024-08-27,Globex Ltd,Tablet,Electronics,Abuja,1,314.87,314.87
+ORD-0253,2024-06-20,STARK INDUSTRIES,LAPTOP,Computers,  Oyo ,2,1296.98,
+ORD-0254,2024-08-06,Stark Industries,Tablet,Electronics,Lagos,3,291.24,873.72
+ORD-0255,2024-09-27,Umbrella Inc,Monitor,Computers,KANO,1,222.42,222.42
+ORD-0256,2025-05-10,UMBRELLA INC,  Monitor ,Computers,Kano,4,222.52,
+ORD-0257,2024-01-07,  Globex Ltd ,Monitor,Computers,Rivers,2,219.92,439.84
+ORD-0258,2025-04-21,INITECH,TABLET,Electronics,abuja,4,320.25,1281.0
+ORD-0259,2024-01-30,acme corp,Phone,Electronics,  Oyo ,2,462.33,924.66
+ORD-0260,2025-05-11,Globex Ltd,KEYBOARD,Accessories,lagos,1,35.07,35.07
+ORD-0261,2025-01-09,Initech,Monitor,Computers,Abuja,2,212.9,425.8
+ORD-0262,2024-12-16,UMBRELLA INC,Tablet,Electronics,rivers,2,296.62,593.24
+ORD-0263,2025-05-20,Umbrella Inc,PHONE,Electronics,Rivers,3,431.36,1294.08
+ORD-0264,2024-07-27,UMBRELLA INC,Keyboard,Accessories,LAGOS,5,33.91,169.55
+ORD-0265,2024-05-10,Stark Industries,Laptop,Computers,Lagos,3,1251.16,3753.48
+ORD-0266,2024-02-20,Umbrella Inc,Monitor,Computers,RIVERS,5,236.97,1184.85
+ORD-0267,2025-05-01,Stark Industries,phone,Electronics,Lagos,1,422.09,422.09
+ORD-0268,2024-05-30,  Stark Industries ,Tablet,Electronics,LAGOS,5,302.31,1511.55
+ORD-0269,2024-06-27,ACME CORP,phone,Electronics,Kano,4,461.27,1845.08
+ORD-0270,2024-01-14,Initech,MONITOR,Computers,Kano,1,238.22,238.22
+ORD-0271,2024-07-08,Umbrella Inc,  Tablet ,Electronics,Lagos,3,332.47,
+ORD-0272,2024-02-25,Umbrella Inc,Phone,Electronics,OYO,4,455.97,1823.88
+ORD-0273,2025-03-07,stark industries,Phone,Electronics,Abuja,1,474.64,474.64
+ORD-0274,2024-06-08,UMBRELLA INC,Phone,Electronics,Abuja,1,466.2,
+ORD-0275,2024-08-05,Globex Ltd,Phone,Electronics,LAGOS,1,463.01,463.01
+ORD-0276,2024-05-04,ACME CORP,PHONE,Electronics,Kano,1,466.54,466.54
+ORD-0277,2024-09-05,Umbrella Inc,LAPTOP,Computers,  Kano ,4,1084.27,4337.08
+ORD-0278,2024-03-27,Initech,Keyboard,Accessories,Oyo,2,36.61,73.22
+ORD-0279,2024-09-17,acme corp,Monitor,Computers,Lagos,4,227.46,909.84
+ORD-0280,2024-03-22,Umbrella Inc,  Phone ,Electronics,RIVERS,1,484.5,484.5
+ORD-0281,2025-05-13,  Stark Industries ,Tablet,Electronics,LAGOS,2,338.38,676.76
+ORD-0282,2025-04-26,Globex Ltd,Keyboard,Accessories,Kano,5,36.59,182.95
+ORD-0283,2025-03-03,UMBRELLA INC,Keyboard,Accessories,Abuja,2,35.91,71.82
+ORD-0284,2024-10-13,Acme Corp,Keyboard,Accessories,Oyo,5,33.84,169.2
+ORD-0285,2024-01-16,Globex Ltd,Tablet,Electronics,Oyo,3,332.91,998.73
+ORD-0286,2024-09-09,UMBRELLA INC,Tablet,Electronics,Abuja,4,339.54,1358.16
+ORD-0287,2024-08-27,Umbrella Inc,  Monitor ,Computers,Rivers,5,231.94,1159.7
+ORD-0288,2025-03-08,globex ltd,  Phone ,Electronics,Oyo,3,428.67,1286.01
+ORD-0289,2024-05-30,Initech,Keyboard,Accessories,Oyo,2,37.18,74.36
+ORD-0290,2025-05-11,Umbrella Inc,  Monitor ,Computers,  Kano ,3,221.52,664.56
+ORD-0291,2025-02-08,Umbrella Inc,Laptop,Computers,Kano,3,1225.66,3676.98
+ORD-0292,2025-04-15,STARK INDUSTRIES,TABLET,Electronics,Lagos,1,328.08,328.08
+ORD-0293,2025-06-17,  Initech ,Keyboard,Accessories,OYO,1,33.13,33.13
+ORD-0294,2024-07-12,Globex Ltd,MONITOR,Computers,Kano,5,223.93,1119.65
+ORD-0295,2025-01-02,Umbrella Inc,laptop,Computers,oyo,3,1167.08,3501.24
+ORD-0296,2025-05-20,  Initech ,Laptop,Computers,  Lagos ,1,1301.43,1301.43
+ORD-0297,2024-02-01,Initech,MONITOR,Computers,  Rivers ,1,204.87,204.87
+ORD-0298,2024-07-28,  Stark Industries ,Tablet,Electronics,  Abuja ,1,284.83,284.83
+ORD-0299,2024-10-13,Umbrella Inc,Tablet,Electronics,Lagos,2,295.22,590.44
+ORD-0300,2024-09-17,Acme Corp,  Tablet ,Electronics,RIVERS,5,338.74,1693.7
+ORD-0301,2024-02-22,Acme Corp,laptop,Computers,Oyo,4,1100.08,4400.32
+ORD-0302,2024-03-06,Stark Industries,Monitor,Computers,Abuja,4,239.68,958.72
+ORD-0303,2024-08-26,Acme Corp,Phone,Electronics,OYO,3,433.68,1301.04
+ORD-0304,2025-01-14,  Globex Ltd ,Laptop,Computers,Kano,4,1283.93,5135.72
+ORD-0305,2024-03-01,Stark Industries,phone,Electronics,  Lagos ,3,489.71,1469.13
+ORD-0306,2025-05-10,ACME CORP,Keyboard,Accessories,Lagos,5,36.47,182.35
+ORD-0307,2024-11-01,STARK INDUSTRIES,Keyboard,Accessories,Oyo,1,38.08,38.08
+ORD-0308,2024-09-20,  Umbrella Inc ,Phone,Electronics,LAGOS,4,434.15,1736.6
+ORD-0309,2024-09-01,Globex Ltd,Monitor,Computers,LAGOS,4,205.42,821.68
+ORD-0310,2024-08-13,ACME CORP,Laptop,Computers,Oyo,1,1117.67,1117.67
+ORD-0311,2025-01-29,Acme Corp,laptop,Computers,LAGOS,4,1309.91,5239.64
+ORD-0312,2025-05-03,Acme Corp,Keyboard,Accessories,RIVERS,3,37.26,111.78
+ORD-0313,2024-07-03,Umbrella Inc,Keyboard,Accessories,oyo,2,36.65,
+ORD-0314,2025-02-25,GLOBEX LTD,Monitor,Computers,Kano,2,209.72,419.44
+ORD-0315,2024-12-08,Globex Ltd,Keyboard,Accessories,Rivers,5,37.38,186.9
+ORD-0316,2025-05-09,Acme Corp,Phone,Electronics,  Kano ,3,446.06,1338.18
+ORD-0317,2024-10-20,Acme Corp,PHONE,Electronics,Rivers,2,455.39,910.78
+ORD-0318,2024-09-01,  Globex Ltd ,Keyboard,Accessories,LAGOS,4,38.44,153.76
+ORD-0319,2024-02-28,Initech,Keyboard,Accessories,Kano,4,37.77,151.08
+ORD-0320,2024-12-15,Stark Industries,Phone,Electronics,  Kano ,4,477.63,1910.52
+ORD-0321,2025-01-03,Umbrella Inc,Phone,Electronics,Lagos,5,430.78,2153.9
+ORD-0322,2024-05-21,  Globex Ltd ,Laptop,Computers,Oyo,3,1217.12,3651.36
+ORD-0323,2024-03-30,STARK INDUSTRIES,Laptop,Computers,Abuja,2,1224.16,2448.32
+ORD-0324,2024-07-15,Stark Industries,Laptop,Computers,Rivers,2,1112.89,2225.78
+ORD-0325,2025-06-16,umbrella inc,Phone,Electronics,LAGOS,1,467.3,467.3
+ORD-0326,2025-05-19,Acme Corp,Keyboard,Accessories,Lagos,3,33.47,100.41
+ORD-0327,2024-09-29,  Globex Ltd ,  Monitor ,Computers,Kano,2,236.37,472.74
+ORD-0328,2025-01-15,Stark Industries,Keyboard,Accessories,OYO,1,32.64,
+ORD-0329,2025-06-12,  Acme Corp ,Keyboard,Accessories,Lagos,5,38.02,190.1
+ORD-0330,2025-01-25,Stark Industries,  Laptop ,Computers,Lagos,3,1266.99,3800.97
+ORD-0331,2024-01-27,Stark Industries,PHONE,Electronics,Oyo,4,445.18,1780.72
+ORD-0332,2024-08-17,STARK INDUSTRIES,Phone,Electronics,Kano,2,492.07,984.14
+ORD-0333,2024-01-31,ACME CORP,Phone,Electronics,Lagos,3,427.54,1282.62
+ORD-0334,2025-04-20,Stark Industries,Laptop,Computers,Kano,3,1084.24,3252.72
+ORD-0335,2024-04-06,Globex Ltd,Monitor,Computers,  Lagos ,1,213.43,213.43
+ORD-0336,2025-05-27,Initech,PHONE,Electronics,Lagos,4,449.42,1797.68
+ORD-0337,2024-08-20,Globex Ltd,phone,Electronics,kano,4,484.6,1938.4
+ORD-0338,2024-06-17,Acme Corp,TABLET,Electronics,ABUJA,4,325.29,1301.16
+ORD-0339,2025-06-22,Acme Corp,Monitor,Computers,abuja,5,234.95,1174.75
+ORD-0340,2024-12-09,UMBRELLA INC,Keyboard,Accessories,Oyo,3,34.3,102.9
+ORD-0341,2025-06-13,GLOBEX LTD,Monitor,Computers,rivers,5,200.36,1001.8
+ORD-0342,2025-06-27,Globex Ltd,MONITOR,Computers,Lagos,1,214.04,214.04
+ORD-0343,2024-01-22,Globex Ltd,monitor,Computers,Kano,2,220.21,440.42
+ORD-0344,2024-02-11,Acme Corp,Monitor,Computers,Oyo,4,225.86,903.44
+ORD-0345,2024-02-06,Stark Industries,Tablet,Electronics,Lagos,3,317.95,953.85
+ORD-0346,2024-08-30,Acme Corp,  Phone ,Electronics,Rivers,5,406.23,2031.15
+ORD-0347,2024-05-03,ACME CORP,KEYBOARD,Accessories,Oyo,3,36.03,108.09
+ORD-0348,2025-06-30,Globex Ltd,keyboard,Accessories,Abuja,1,34.76,34.76
+ORD-0349,2025-02-20,Stark Industries,Tablet,Electronics,Rivers,2,333.88,667.76
+ORD-0350,2024-10-21,Umbrella Inc,LAPTOP,Computers,Oyo,1,1257.7,1257.7
+ORD-0351,2024-07-25,Stark Industries,tablet,Electronics,Rivers,2,319.32,638.64
+ORD-0352,2025-04-25,Initech,tablet,Electronics,Lagos,3,316.99,950.97
+ORD-0353,2025-01-27,Stark Industries,Keyboard,Accessories,Abuja,2,32.82,65.64
+ORD-0354,2024-09-01,initech,KEYBOARD,Accessories,Oyo,2,37.53,75.06
+ORD-0355,2024-08-09,INITECH,Monitor,Computers,lagos,3,210.53,631.59
+ORD-0356,2024-12-22,Umbrella Inc,  Laptop ,Computers,Lagos,5,1096.03,5480.15
+ORD-0357,2024-04-21,  Stark Industries ,Monitor,Computers,KANO,4,213.58,854.32
+ORD-0358,2024-12-26,Globex Ltd,Laptop,Computers,kano,4,1160.88,4643.52
+ORD-0359,2025-06-14,Acme Corp,Tablet,Electronics,Abuja,3,329.91,989.73
+ORD-0360,2024-01-05,UMBRELLA INC,LAPTOP,Computers,Oyo,4,1289.0,5156.0
+ORD-0361,2024-06-02,Umbrella Inc,Phone,Electronics,RIVERS,4,440.77,
+ORD-0362,2025-04-08,Umbrella Inc,Tablet,Electronics,Rivers,1,302.53,302.53
+ORD-0363,2025-06-22,Stark Industries,keyboard,Accessories,Oyo,3,33.97,101.91
+ORD-0364,2025-05-26,Umbrella Inc,Keyboard,Accessories,ABUJA,1,37.01,37.01
+ORD-0365,2024-05-28,Umbrella Inc,LAPTOP,Computers,  Oyo ,5,1152.97,5764.85
+ORD-0366,2024-12-04,Initech,Tablet,Electronics,Oyo,2,284.45,568.9
+ORD-0367,2024-01-11,  Acme Corp ,Keyboard,Accessories,Lagos,2,38.3,76.6
+ORD-0368,2024-11-15,Stark Industries,TABLET,Electronics,Oyo,4,297.59,1190.36
+ORD-0369,2025-03-16,Umbrella Inc,TABLET,Electronics,Abuja,5,324.08,1620.4
+ORD-0370,2025-04-08,Acme Corp,Phone,Electronics,  Lagos ,5,465.86,2329.3
+ORD-0371,2025-05-27,  Umbrella Inc ,LAPTOP,Computers,  Oyo ,1,1178.28,1178.28
+ORD-0372,2025-05-13,Umbrella Inc,Laptop,Computers,Abuja,2,1311.47,2622.94
+ORD-0373,2024-04-04,Globex Ltd,  Tablet ,Electronics,  Rivers ,3,321.88,965.64
+ORD-0374,2025-06-08,Globex Ltd,KEYBOARD,Accessories,lagos,1,37.28,37.28
+ORD-0375,2025-06-05,UMBRELLA INC,Keyboard,Accessories,Kano,3,37.24,111.72
+ORD-0376,2024-07-11,UMBRELLA INC,Keyboard,Accessories,KANO,5,32.95,164.75
+ORD-0377,2024-02-13,Umbrella Inc,Tablet,Electronics,LAGOS,5,285.61,1428.05
+ORD-0378,2024-11-07,umbrella inc,KEYBOARD,Accessories,Lagos,5,31.53,157.65
+ORD-0379,2025-05-24,  Stark Industries ,Phone,Electronics,Oyo,1,422.7,422.7
+ORD-0380,2024-07-22,Umbrella Inc,Tablet,Electronics,Oyo,5,340.82,
+ORD-0381,2025-06-05,Acme Corp,laptop,Computers,  Lagos ,2,1204.42,2408.84
+ORD-0382,2025-05-17,Umbrella Inc,Phone,Electronics,Oyo,2,490.31,980.62
+ORD-0383,2024-11-26,Globex Ltd,Phone,Electronics,Kano,1,466.61,466.61
+ORD-0384,2024-04-11,Stark Industries,Keyboard,Accessories,Lagos,2,31.73,63.46
+ORD-0385,2024-01-21,Acme Corp,Laptop,Computers,Kano,4,1229.76,4919.04
+ORD-0386,2024-09-01,Globex Ltd,Tablet,Electronics,Kano,1,306.26,306.26
+ORD-0387,2024-11-18,Acme Corp,Laptop,Computers,  Abuja ,5,1285.13,6425.65
+ORD-0388,2025-05-22,Acme Corp,Monitor,Computers,KANO,5,209.09,1045.45
+ORD-0389,2024-11-12,Umbrella Inc,monitor,Computers,Abuja,5,207.74,1038.7
+ORD-0390,2025-01-01,UMBRELLA INC,Laptop,Computers,kano,1,1121.63,1121.63
+ORD-0391,2024-04-27,Initech,Keyboard,Accessories,Oyo,4,35.43,141.72
+ORD-0392,2024-05-06,Umbrella Inc,KEYBOARD,Accessories,Rivers,4,36.06,144.24
+ORD-0393,2024-10-17,Initech,LAPTOP,Computers,Kano,4,1125.89,4503.56
+ORD-0394,2024-12-15,GLOBEX LTD,Phone,Electronics,Kano,3,464.78,1394.34
+ORD-0395,2024-05-10,  Stark Industries ,Laptop,Computers,Abuja,1,1127.11,1127.11
+ORD-0396,2024-08-09,Umbrella Inc,Laptop,Computers,  Abuja ,2,1168.3,2336.6
+ORD-0397,2025-05-02,STARK INDUSTRIES,TABLET,Electronics,Kano,2,297.43,594.86
+ORD-0398,2024-09-24,Stark Industries,Monitor,Computers,Abuja,2,239.45,478.9
+ORD-0399,2025-06-06,Globex Ltd,Keyboard,Accessories,Kano,5,33.22,166.1
+ORD-0400,2024-10-03,UMBRELLA INC,Tablet,Electronics,lagos,1,312.64,312.64
