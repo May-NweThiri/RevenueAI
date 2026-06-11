@@ -6,7 +6,7 @@ import type {
 } from "@/types/dataset"
 import type { MetricsGroupedResponse } from "@/types/metrics"
 import type { InsightListResponse } from "@/types/insight"
-import type { ChatResponse, ChatRequest } from "@/types/chat"
+import type { ChatResponse, ChatRequest, ConversationResponse } from "@/types/chat"
 
 const BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000"
 
@@ -97,6 +97,9 @@ export const api = {
       method: "POST",
       body: JSON.stringify({ message: msg } as ChatRequest),
     }),
+
+  getConversation: (datasetId: string): Promise<ConversationResponse> =>
+    request(`/api/v1/conversations/${datasetId}`),
 
   wsChat: (datasetId: string): string =>
     `${BASE_URL.replace(/^http/, "ws")}/api/v1/ws/chat/${datasetId}`,

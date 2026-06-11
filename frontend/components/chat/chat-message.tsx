@@ -10,20 +10,26 @@ interface ChatMessageProps {
 }
 
 function MarkdownContent({ content }: { content: string }) {
-  const parts = content.split(/(\*\*[^*]+\*\*)/g)
   return (
-    <p className="text-sm leading-relaxed">
-      {parts.map((part, i) => {
-        if (part.startsWith("**") && part.endsWith("**")) {
-          return (
-            <strong key={i} className="font-semibold text-foreground/90">
-              {part.slice(2, -2)}
-            </strong>
-          )
-        }
-        return <span key={i}>{part}</span>
+    <div className="space-y-2 text-sm leading-relaxed">
+      {content.split("\n").map((line, lineIdx) => {
+        const parts = line.split(/(\*\*[^*]+\*\*)/g)
+        return (
+          <p key={lineIdx}>
+            {parts.map((part, i) => {
+              if (part.startsWith("**") && part.endsWith("**")) {
+                return (
+                  <strong key={i} className="font-semibold text-foreground/90">
+                    {part.slice(2, -2)}
+                  </strong>
+                )
+              }
+              return <span key={i}>{part}</span>
+            })}
+          </p>
+        )
       })}
-    </p>
+    </div>
   )
 }
 

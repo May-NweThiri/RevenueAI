@@ -11,7 +11,7 @@ from app.models.dataset import Dataset
 from app.schemas.chat import ChatRequest, ChatResponse, ConversationResponse
 from app.services.metric_service import get_metrics_grouped
 from app.services.insight_service import get_insights
-from app.utils.file_parser import parse_file
+from app.services.dataset_file_loader import load_dataset_dataframe
 from app.ai.chat_agent import RevenueAIChatAgent
 
 router = APIRouter()
@@ -33,7 +33,7 @@ def chat_with_dataset(
             detail="Dataset file not available. The data may have been cleaned up.",
         )
 
-    df = parse_file(dataset.file_path)
+    df = load_dataset_dataframe(dataset, db)
 
     metrics_grouped = get_metrics_grouped(db, dataset_id)
     metrics_summary = _format_metrics_summary(metrics_grouped)
@@ -130,7 +130,7 @@ async def websocket_chat(websocket: WebSocket, dataset_id: str):
             await websocket.close(code=4004)
             return
 
-        df = parse_file(dataset.file_path)
+        df = load_dataset_dataframe(dataset, db)
 
         metrics_grouped = get_metrics_grouped(db, dataset_id)
         metrics_summary = _format_metrics_summary(metrics_grouped)

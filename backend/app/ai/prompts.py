@@ -44,8 +44,8 @@ Categories:
 - decline: declining performance that needs attention
 - recommendation: specific action items based on the data
 
-Respond ONLY with a JSON array of insight objects.
-Each object: {{"type": str, "title": str, "content": str, "severity": "info"|"warning"|"critical"}}"""
+Respond ONLY with a JSON object in this format:
+{{"insights": [{{"type": str, "title": str, "content": str, "severity": "info"|"warning"|"critical"}}, ...]}}"""
 
 INSIGHT_USER_PROMPT = """Dataset: {dataset_name}
 Rows: {row_count} | Columns: {column_count}

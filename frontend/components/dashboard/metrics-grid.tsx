@@ -9,7 +9,7 @@ interface MetricsGridProps {
 
 export function MetricsGrid({ metrics }: MetricsGridProps) {
   const totalRevenue = metrics.total_revenue?.[0]
-  const aov = metrics.average_order_value?.[0]
+  const aov = metrics.aov?.[0]
   const growth = metrics.growth_rate?.[0]
   const topProduct = metrics.top_products?.[0]
 

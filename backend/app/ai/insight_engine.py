@@ -127,13 +127,18 @@ def _generate_fallback_insights(metrics_grouped: dict) -> list[dict]:
         })
 
     anomalies = metrics_grouped.get("trends", [])
-    anomaly_items = [t for t in anomalies if t.get("metadata", {}).get("type") == "anomaly"]
+    anomaly_items = [
+        t
+        for t in anomalies
+        if (t.get("metadata") or t.get("extra_metadata") or {}).get("type") == "anomaly"
+    ]
     for a in anomaly_items[:2]:
         insights.append({
             "type": "anomaly",
             "title": f"Anomaly detected in {a.get('period', 'unknown period')}",
             "content": f"Revenue of ${a.get('value', 0):,.2f} in {a.get('period', 'unknown')} "
-                       f"deviates significantly from the trend (z-score: {a.get('metadata', {}).get('z_score', 'N/A')}).",
+                       f"deviates significantly from the trend (z-score: "
+                       f"{(a.get('metadata') or a.get('extra_metadata') or {}).get('z_score', 'N/A')}).",
             "severity": "warning",
         })
 

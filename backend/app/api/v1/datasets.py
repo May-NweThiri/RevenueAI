@@ -5,7 +5,7 @@ from app.api.deps import get_db
 from app.models.dataset import Dataset
 from app.schemas.dataset import DatasetResponse, DatasetListResponse, PreviewResponse
 from app.services.dataset_service import get_dataset, get_datasets, get_datasets_count, delete_dataset
-from app.utils.file_parser import parse_file
+from app.services.dataset_file_loader import load_dataset_dataframe
 
 router = APIRouter()
 
@@ -47,7 +47,7 @@ def preview_dataset(dataset_id: str, db: Session = Depends(get_db)):
         raise HTTPException(status_code=400, detail="Dataset file not available")
 
     try:
-        df = parse_file(dataset.file_path)
+        df = load_dataset_dataframe(dataset, db)
         preview_rows = df.head(50).to_dict(orient="records")
         return PreviewResponse(
             columns=list(df.columns),

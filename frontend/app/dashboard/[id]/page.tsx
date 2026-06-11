@@ -10,28 +10,22 @@ import {
   LoadingPage,
   LoadingSpinner,
 } from "@/components/shared/loading-spinner"
+import { MetricsGrid } from "@/components/dashboard/metrics-grid"
 import {
-  MetricsGrid,
-  MonthlyRevenueTable,
-  CategoryBreakdown,
-  TopProducts,
-} from "@/components/dashboard/metrics-grid"
-import { formatDate, getSeverityColor, timeAgo } from "@/lib/utils"
-import {
-  MessageSquare,
-  Table,
-  Eye,
-  AlertTriangle,
-  Lightbulb,
-  TrendingUp,
-} from "lucide-react"
+  RevenueTrendChart,
+  CategoryPieChart,
+  TopProductsBarChart,
+  GrowthRateChart,
+} from "@/components/dashboard/charts"
+import { getSeverityColor, timeAgo } from "@/lib/utils"
+import { MessageSquare, Table, Lightbulb } from "lucide-react"
 
 export default function DatasetDetailPage() {
   const params = useParams()
   const id = params.id as string
   const { dataset, loading: dsLoading, error: dsError } = useDataset(id)
   const { metrics, loading: mLoading, error: mError } = useMetrics(id)
-  const { insights, loading: iLoading, error: iError } = useInsights(id)
+  const { insights, loading: iLoading } = useInsights(id)
 
   if (dsLoading) return <LoadingPage />
 
@@ -47,7 +41,6 @@ export default function DatasetDetailPage() {
 
   return (
     <div className="space-y-6 py-6">
-      {/* Header */}
       <div className="flex items-start justify-between">
         <div>
           <h2 className="text-xl font-semibold tracking-tight">
@@ -58,18 +51,15 @@ export default function DatasetDetailPage() {
             &middot; uploaded {timeAgo(dataset.created_at)}
           </p>
         </div>
-        <div className="flex items-center gap-2">
-          <Link
-            href={`/dashboard/${id}/chat`}
-            className="flex items-center gap-1.5 rounded-lg bg-accent px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-accent-hover"
-          >
-            <MessageSquare className="h-4 w-4" />
-            AI Chat
-          </Link>
-        </div>
+        <Link
+          href={`/dashboard/${id}/chat`}
+          className="flex items-center gap-1.5 rounded-lg bg-accent px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-accent-hover"
+        >
+          <MessageSquare className="h-4 w-4" />
+          AI Chat
+        </Link>
       </div>
 
-      {/* KPI Metrics */}
       {mLoading ? (
         <LoadingSpinner className="py-12" />
       ) : mError ? (
@@ -78,16 +68,17 @@ export default function DatasetDetailPage() {
         <>
           <MetricsGrid metrics={metrics} />
 
-          {/* Charts Row */}
-          <div className="grid gap-4 lg:grid-cols-3">
-            <MonthlyRevenueTable metrics={metrics} />
-            <CategoryBreakdown metrics={metrics} />
-            <TopProducts metrics={metrics} />
+          <RevenueTrendChart metrics={metrics} />
+
+          <div className="grid gap-4 lg:grid-cols-2">
+            <CategoryPieChart metrics={metrics} />
+            <TopProductsBarChart metrics={metrics} />
           </div>
+
+          <GrowthRateChart metrics={metrics} />
         </>
       ) : null}
 
-      {/* Columns */}
       {dataset.columns_meta && dataset.columns_meta.length > 0 && (
         <GlassCard>
           <h3 className="mb-4 flex items-center gap-2 text-sm font-medium text-foreground/70">
@@ -130,7 +121,6 @@ export default function DatasetDetailPage() {
         </GlassCard>
       )}
 
-      {/* Insights */}
       {iLoading ? (
         <LoadingSpinner className="py-8" />
       ) : insights.length > 0 ? (
