@@ -53,7 +53,7 @@ def parse_upload_file(upload: Upload, db: Session) -> tuple:
         db.commit()
         raise FileNotFoundError(f"File not found in storage: {safe_filename}")
 
-    df = parse_file(buf)
+    df = parse_file(buf, file_ext=ext)
 
     summary = get_summary_stats(df)
 
