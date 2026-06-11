@@ -1,6 +1,7 @@
 "use client"
 
 import { usePathname } from "next/navigation"
+import { BrandName } from "@/components/shared/brand-name"
 
 const titles: Record<string, string> = {
   "/": "Home",
@@ -20,7 +21,9 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-30 flex h-14 items-center gap-4 border-b border-surface-border bg-surface/80 px-6 backdrop-blur-xl">
-      <div>
+      <div className="flex items-center gap-3">
+        <BrandName className="text-sm" />
+        <span className="text-foreground/20">/</span>
         <h1 className="text-sm font-medium text-foreground/80">{title}</h1>
       </div>
     </header>

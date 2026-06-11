@@ -5,7 +5,7 @@ const features = [
   {
     icon: Upload,
     title: "Upload Any Dataset",
-    desc: "Drop CSV or Excel files. RevenueAI auto-detects columns and structure.",
+    desc: "Drop CSV or Excel files. FinX AI auto-detects columns and structure.",
   },
   {
     icon: TrendingUp,
@@ -41,7 +41,7 @@ export default function LandingPage() {
         </h1>
         <p className="mx-auto max-w-xl text-base text-foreground/50">
           Upload your sales data, get instant insights, and ask natural language
-          questions. RevenueAI combines pandas analytics with AI to make data
+          questions. FinX AI combines pandas analytics with AI to make data
           exploration effortless.
         </p>
         <div className="flex items-center justify-center gap-3">

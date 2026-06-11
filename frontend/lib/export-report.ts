@@ -42,5 +42,5 @@ export async function downloadReportPdf(
     heightLeft -= pageHeight
   }
 
-  pdf.save(`${sanitizeFilename(datasetName) || "revenueai-report"}.pdf`)
+  pdf.save(`${sanitizeFilename(datasetName) || "finx-ai-report"}.pdf`)
 }

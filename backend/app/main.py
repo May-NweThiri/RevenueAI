@@ -52,7 +52,7 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(
     title=settings.APP_NAME,
-    description="AI-powered revenue analytics platform",
+    description="FinX AI — AI-powered revenue analytics platform",
     version="0.1.0",
     lifespan=lifespan,
 )

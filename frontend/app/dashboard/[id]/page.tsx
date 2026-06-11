@@ -20,6 +20,7 @@ import {
   GrowthRateChart,
 } from "@/components/dashboard/charts"
 import { downloadReportPdf } from "@/lib/export-report"
+import { BrandName } from "@/components/shared/brand-name"
 import { formatDate, getSeverityColor, timeAgo } from "@/lib/utils"
 import { MessageSquare, Table, Lightbulb, Download } from "lucide-react"
 
@@ -91,9 +92,12 @@ export default function DatasetDetailPage() {
       </div>
 
       <div ref={reportRef} className="space-y-6 bg-surface">
-        <p className="text-xs text-foreground/30">
-          Report generated {formatDate(new Date().toISOString())}
-        </p>
+        <div className="flex items-center justify-between border-b border-surface-border pb-4">
+          <BrandName className="text-base" />
+          <p className="text-xs text-foreground/30">
+            Report generated {formatDate(new Date().toISOString())}
+          </p>
+        </div>
 
       {mLoading ? (
         <LoadingSpinner className="py-12" />

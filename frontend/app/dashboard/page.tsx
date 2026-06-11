@@ -2,6 +2,7 @@
 
 import { useDatasets } from "@/hooks/use-dataset"
 import { GlassCard } from "@/components/shared/glass-card"
+import { BrandName } from "@/components/shared/brand-name"
 import { LoadingPage, EmptyState } from "@/components/shared/loading-spinner"
 import { formatDate, timeAgo, formatNumber } from "@/lib/utils"
 import {
@@ -56,6 +57,7 @@ export default function DashboardPage() {
     <div className="space-y-6 py-6">
       <div className="flex items-center justify-between">
         <div>
+          <BrandName className="mb-1 text-sm" />
           <h2 className="text-xl font-semibold tracking-tight">
             Your Datasets
           </h2>

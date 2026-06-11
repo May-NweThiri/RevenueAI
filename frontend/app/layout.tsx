@@ -7,7 +7,7 @@ import { Navbar } from "@/components/layout/navbar"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "RevenueAI — AI-Powered Revenue Analytics",
+  title: "FinX AI — AI-Powered Revenue Analytics",
   description:
     "Upload your sales data, get instant insights, and ask natural language questions with AI.",
 }

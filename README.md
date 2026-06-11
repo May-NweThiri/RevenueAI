@@ -1,4 +1,4 @@
-# RevenueAI
+# FinX AI
 
 AI-powered revenue analytics platform. Upload a sales CSV/Excel file and get an automatic dashboard with KPIs, charts, a plain-language executive summary with recommendations, data-quality warnings, an AI chat to ask questions about your data, and a downloadable PDF report.
 

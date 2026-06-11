@@ -2,7 +2,7 @@ from pydantic_settings import BaseSettings
 
 
 class Settings(BaseSettings):
-    APP_NAME: str = "RevenueAI"
+    APP_NAME: str = "FinX AI"
     DEBUG: bool = True
 
     DATABASE_URL: str = "sqlite:///./revenueai.db"

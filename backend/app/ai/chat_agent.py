@@ -135,7 +135,7 @@ class RevenueAIChatAgent:
     def _openai_stream(self, question: str) -> Generator[dict, None, None]:
         context = self._build_context()
         system_prompt = (
-            "You are RevenueAI, an expert AI business analyst. "
+            "You are FinX AI, an expert AI business analyst. "
             "Answer questions about the user's uploaded dataset using the context below. "
             "The 'Computed aggregates' section is complete and calculated from the full "
             "dataset — when asked about monthly revenue, products, or category breakdowns, "

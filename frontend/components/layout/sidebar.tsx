@@ -3,6 +3,7 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
+import { BrandName } from "@/components/shared/brand-name"
 import {
   BarChart3,
   CloudUpload,
@@ -32,10 +33,7 @@ export function Sidebar() {
           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-accent">
             <BarChart3 className="h-4 w-4 text-white" />
           </div>
-          <span className="text-lg font-semibold tracking-tight">
-            <span className="text-gradient">Revenue</span>
-            <span className="text-foreground/60">AI</span>
-          </span>
+          <BrandName className="text-lg" />
         </div>
 
         <nav className="flex-1 space-y-1 p-3">
