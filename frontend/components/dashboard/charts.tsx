@@ -81,9 +81,10 @@ export function RevenueTrendChart({
           <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.06)" />
           <XAxis
             dataKey="period"
-            tick={{ fill: "rgba(255,255,255,0.45)", fontSize: 11 }}
+            tick={{ fill: "rgba(255,255,255,0.45)", fontSize: 10 }}
             axisLine={false}
             tickLine={false}
+            interval="equidistantPreserveStart"
           />
           <YAxis
             tick={{ fill: "rgba(255,255,255,0.45)", fontSize: 11 }}

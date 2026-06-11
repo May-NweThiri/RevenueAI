@@ -10,7 +10,10 @@ interface MetricsGridProps {
 export function MetricsGrid({ metrics }: MetricsGridProps) {
   const totalRevenue = metrics.total_revenue?.[0]
   const aov = metrics.aov?.[0]
-  const growth = metrics.growth_rate?.[0]
+  // Prefer the overall growth rate; the per-month entries are MoM values.
+  const growth =
+    metrics.growth_rate?.find((g) => g.period === "all") ??
+    metrics.growth_rate?.[0]
   const topProduct = metrics.top_products?.[0]
 
   return (
@@ -33,7 +36,11 @@ export function MetricsGrid({ metrics }: MetricsGridProps) {
       <KPICard
         title="Growth Rate"
         value={growth ? formatPercent(growth.value) : "—"}
-        subtitle={growth?.period ? `over ${growth.period}` : undefined}
+        subtitle={
+          growth?.period && growth.period !== "all"
+            ? `over ${growth.period}`
+            : "first vs last month"
+        }
         icon={<TrendingUp className="h-5 w-5" />}
       />
       <KPICard
