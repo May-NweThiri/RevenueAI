@@ -4,6 +4,7 @@ from typing import Any, Generator
 import pandas as pd
 
 from app.config import settings
+from app.ai.metric_calculator import _normalized_groups
 
 logger = logging.getLogger(__name__)
 
@@ -144,19 +145,19 @@ class RevenueAIChatAgent:
             return prefix + "\n".join(lines)
 
         if ("compare" in q or "category" in q or "breakdown" in q) and revenue_cols and category_cols:
-            grouped = self.df.groupby(category_cols[0])[revenue_cols[0]].sum().sort_values(ascending=False)
-            total = float(grouped.sum())
+            grouped = _normalized_groups(self.df, category_cols[0], revenue_cols[0])
+            total = float(grouped["_value"].sum())
             lines = [f"**Revenue by {category_cols[0].title()}:**"]
-            for cat, rev in grouped.items():
-                pct = (rev / total * 100) if total else 0
-                lines.append(f"  {cat}: ${rev:,.2f} ({pct:.1f}%)")
+            for _, row in grouped.iterrows():
+                pct = (row["_value"] / total * 100) if total else 0
+                lines.append(f"  {row['_label']}: ${row['_value']:,.2f} ({pct:.1f}%)")
             return prefix + "\n".join(lines)
 
         if ("top" in q or "best" in q or "ranking" in q or "leading" in q) and revenue_cols and product_cols:
-            grouped = self.df.groupby(product_cols[0])[revenue_cols[0]].sum().sort_values(ascending=False)
+            grouped = _normalized_groups(self.df, product_cols[0], revenue_cols[0]).head(10)
             lines = ["**Top Products by Revenue:**"]
-            for i, (prod, rev) in enumerate(grouped.head(10).items(), 1):
-                lines.append(f"  {i}. {prod} — ${rev:,.2f}")
+            for i, (_, row) in enumerate(grouped.iterrows(), 1):
+                lines.append(f"  {i}. {row['_label']} — ${row['_value']:,.2f}")
             return prefix + "\n".join(lines)
 
         if ("month" in q or "trend" in q or "growth" in q or "monthly" in q or "over time" in q) and revenue_cols and date_cols:
