@@ -1,5 +1,6 @@
 "use client"
 
+import { useRef, useState } from "react"
 import { useParams } from "next/navigation"
 import Link from "next/link"
 import { useDataset } from "@/hooks/use-dataset"
@@ -17,8 +18,9 @@ import {
   TopProductsBarChart,
   GrowthRateChart,
 } from "@/components/dashboard/charts"
-import { getSeverityColor, timeAgo } from "@/lib/utils"
-import { MessageSquare, Table, Lightbulb } from "lucide-react"
+import { downloadReportPdf } from "@/lib/export-report"
+import { formatDate, getSeverityColor, timeAgo } from "@/lib/utils"
+import { MessageSquare, Table, Lightbulb, Download } from "lucide-react"
 
 export default function DatasetDetailPage() {
   const params = useParams()
@@ -26,6 +28,22 @@ export default function DatasetDetailPage() {
   const { dataset, loading: dsLoading, error: dsError } = useDataset(id)
   const { metrics, loading: mLoading, error: mError } = useMetrics(id)
   const { insights, loading: iLoading } = useInsights(id)
+
+  const reportRef = useRef<HTMLDivElement | null>(null)
+  const [exporting, setExporting] = useState(false)
+
+  async function handleDownload() {
+    if (!reportRef.current || !dataset) return
+    setExporting(true)
+    try {
+      await downloadReportPdf(reportRef.current, dataset.name)
+    } catch (err) {
+      console.error("Export failed:", err)
+      window.alert("Could not generate the report. Please try again.")
+    } finally {
+      setExporting(false)
+    }
+  }
 
   if (dsLoading) return <LoadingPage />
 
@@ -51,14 +69,30 @@ export default function DatasetDetailPage() {
             &middot; uploaded {timeAgo(dataset.created_at)}
           </p>
         </div>
-        <Link
-          href={`/dashboard/${id}/chat`}
-          className="flex items-center gap-1.5 rounded-lg bg-accent px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-accent-hover"
-        >
-          <MessageSquare className="h-4 w-4" />
-          AI Chat
-        </Link>
+        <div className="flex items-center gap-2">
+          <button
+            type="button"
+            onClick={handleDownload}
+            disabled={exporting || mLoading}
+            className="flex items-center gap-1.5 rounded-lg border border-surface-border bg-surface-card px-4 py-2 text-sm font-medium text-foreground/80 transition-colors hover:bg-surface-hover disabled:cursor-not-allowed disabled:opacity-50"
+          >
+            <Download className="h-4 w-4" />
+            {exporting ? "Preparing..." : "Download"}
+          </button>
+          <Link
+            href={`/dashboard/${id}/chat`}
+            className="flex items-center gap-1.5 rounded-lg bg-accent px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-accent-hover"
+          >
+            <MessageSquare className="h-4 w-4" />
+            AI Chat
+          </Link>
+        </div>
       </div>
+
+      <div ref={reportRef} className="space-y-6 bg-surface">
+        <p className="text-xs text-foreground/30">
+          Report generated {formatDate(new Date().toISOString())}
+        </p>
 
       {mLoading ? (
         <LoadingSpinner className="py-12" />
@@ -153,6 +187,7 @@ export default function DatasetDetailPage() {
           </div>
         </GlassCard>
       ) : null}
+      </div>
     </div>
   )
 }
