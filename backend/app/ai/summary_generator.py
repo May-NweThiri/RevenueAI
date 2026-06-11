@@ -84,7 +84,9 @@ def generate_summary(df: pd.DataFrame, columns_meta: list[dict], dataset_name: s
     if product_cols:
         products = _ranked(df, product_cols[0], revenue_col)
         summary["top_products"] = products[:3]
-        summary["low_products"] = list(reversed(products[-3:])) if len(products) > 3 else []
+        # Bottom performers, excluding anything already shown in the top list.
+        remainder = products[3:]
+        summary["low_products"] = list(reversed(remainder[-3:]))
 
         if products:
             top = products[0]
@@ -133,7 +135,8 @@ def generate_summary(df: pd.DataFrame, columns_meta: list[dict], dataset_name: s
         summary["region_column"] = region_col
         regions = _ranked(df, region_col, revenue_col)
         summary["top_regions"] = regions[:3]
-        summary["low_regions"] = list(reversed(regions[-3:])) if len(regions) > 3 else []
+        remainder = regions[3:]
+        summary["low_regions"] = list(reversed(remainder[-3:]))
 
         if regions:
             best = regions[0]
