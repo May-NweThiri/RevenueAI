@@ -103,8 +103,6 @@ export default function DatasetDetailPage() {
         <>
           <MetricsGrid metrics={metrics} />
 
-          <SummaryCard datasetId={id} />
-
           <RevenueTrendChart metrics={metrics} />
 
           <div className="grid gap-4 lg:grid-cols-2">
@@ -113,6 +111,8 @@ export default function DatasetDetailPage() {
           </div>
 
           <GrowthRateChart metrics={metrics} />
+
+          <SummaryCard datasetId={id} />
         </>
       ) : null}
 
