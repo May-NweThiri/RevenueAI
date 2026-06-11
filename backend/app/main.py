@@ -7,6 +7,7 @@ from fastapi.responses import JSONResponse
 from starlette.exceptions import HTTPException as StarletteHTTPException
 
 from app.config import settings
+from app.ai.client import ai_provider_name
 import app.database as db
 from app.database import init_db, get_database_diagnostics
 from app.api.router import api_router
@@ -80,7 +81,7 @@ def health_check():
         "app": settings.APP_NAME,
         "version": "0.1.0",
         "database": "connected" if db.db_available else "unavailable",
-        "ai": "configured" if settings.OPENAI_API_KEY else "not configured",
+        "ai": ai_provider_name(),
     }
     if not db.db_available:
         payload["database_config"] = get_database_diagnostics()

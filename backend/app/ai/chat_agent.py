@@ -4,6 +4,7 @@ from typing import Any, Generator
 import pandas as pd
 
 from app.config import settings
+from app.ai.client import ai_configured, get_ai_client
 from app.ai.metric_calculator import _normalized_groups
 
 logger = logging.getLogger(__name__)
@@ -60,7 +61,7 @@ class RevenueAIChatAgent:
         self.messages.append({"role": "assistant", "content": full_answer})
 
     def _compute_answer_stream(self, question: str) -> Generator[dict, None, None]:
-        if not settings.OPENAI_API_KEY:
+        if not ai_configured():
             yield {"type": "token", "content": self._local_fallback(question)}
             return
         yield from self._openai_stream(question)
@@ -84,11 +85,12 @@ class RevenueAIChatAgent:
         api_messages.append({"role": "user", "content": question})
 
         try:
-            from openai import OpenAI
-
-            client = OpenAI(api_key=settings.OPENAI_API_KEY)
+            client, model = get_ai_client()
+            if client is None:
+                yield {"type": "token", "content": self._local_fallback(question)}
+                return
             stream = client.chat.completions.create(
-                model=settings.OPENAI_MODEL,
+                model=model,
                 messages=api_messages,
                 temperature=settings.OPENAI_TEMPERATURE,
                 max_tokens=settings.OPENAI_MAX_TOKENS,
@@ -129,10 +131,10 @@ class RevenueAIChatAgent:
             c["name"] for c in cols if c.get("detected_role") == "category"
         ]
 
-        if not settings.OPENAI_API_KEY:
+        if not ai_configured():
             prefix = (
-                "*AI chat is running in basic mode — add OPENAI_API_KEY on Railway "
-                "for full AI responses.*\n\n"
+                "*AI chat is running in basic mode — add GEMINI_API_KEY (free) or "
+                "OPENAI_API_KEY on Railway for full AI responses.*\n\n"
             )
         else:
             prefix = ""

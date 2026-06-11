@@ -1,8 +1,7 @@
 import json
 from typing import Any
 
-from openai import OpenAI
-
+from app.ai.client import get_ai_client
 from app.ai.prompts import INSIGHT_SYSTEM_PROMPT, INSIGHT_USER_PROMPT, CHAT_SYSTEM_PROMPT, CHAT_USER_PROMPT
 from app.config import settings
 
@@ -39,12 +38,11 @@ def generate_insights(
     columns_meta: list[dict],
     metrics_grouped: dict,
 ) -> list[dict]:
-    if not settings.OPENAI_API_KEY:
+    client, model = get_ai_client()
+    if client is None:
         return _generate_fallback_insights(metrics_grouped)
 
     try:
-        client = OpenAI(api_key=settings.OPENAI_API_KEY)
-
         user_prompt = INSIGHT_USER_PROMPT.format(
             dataset_name=dataset_name,
             row_count=row_count,
@@ -54,7 +52,7 @@ def generate_insights(
         )
 
         response = client.chat.completions.create(
-            model=settings.OPENAI_MODEL,
+            model=model,
             messages=[
                 {"role": "system", "content": INSIGHT_SYSTEM_PROMPT},
                 {"role": "user", "content": user_prompt},
@@ -166,12 +164,11 @@ def generate_chat_response(
     insights: list[dict],
     chat_history: list[dict],
 ) -> str:
-    if not settings.OPENAI_API_KEY:
+    client, model = get_ai_client()
+    if client is None:
         return _generate_fallback_chat_response(user_message, metrics_grouped)
 
     try:
-        client = OpenAI(api_key=settings.OPENAI_API_KEY)
-
         column_roles = "\n".join(
             f"  - {c['name']} → {c.get('detected_role', 'unknown')}"
             for c in columns_meta
@@ -199,7 +196,7 @@ def generate_chat_response(
         )
 
         response = client.chat.completions.create(
-            model=settings.OPENAI_MODEL,
+            model=model,
             messages=[
                 {"role": "system", "content": CHAT_SYSTEM_PROMPT},
                 {"role": "user", "content": user_prompt},

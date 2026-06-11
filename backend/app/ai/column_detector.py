@@ -4,6 +4,7 @@ from typing import Any
 
 import pandas as pd
 
+from app.ai.client import ai_configured, get_ai_client
 from app.ai.prompts import COLUMN_DETECTION_SYSTEM_PROMPT, COLUMN_DETECTION_USER_PROMPT
 from app.config import settings
 
@@ -177,7 +178,7 @@ def detect_columns(df: pd.DataFrame) -> list[dict]:
                     col_meta["confidence"] = "low"
                     col_meta["reason"] = "Fallback: best candidate revenue column"
 
-    if settings.OPENAI_API_KEY:
+    if ai_configured():
         try:
             ai_roles = _detect_with_ai(df, columns_meta)
             if ai_roles:
@@ -195,8 +196,6 @@ def detect_columns(df: pd.DataFrame) -> list[dict]:
 
 
 def _detect_with_ai(df: pd.DataFrame, heuristic_results: list[dict]) -> dict | None:
-    from openai import OpenAI
-
     columns_sample = {}
     for meta in heuristic_results:
         col = meta["name"]
@@ -211,9 +210,11 @@ def _detect_with_ai(df: pd.DataFrame, heuristic_results: list[dict]) -> dict | N
         columns_sample=json.dumps(columns_sample, indent=2)
     )
 
-    client = OpenAI(api_key=settings.OPENAI_API_KEY)
+    client, model = get_ai_client()
+    if client is None:
+        return None
     response = client.chat.completions.create(
-        model=settings.OPENAI_MODEL,
+        model=model,
         messages=[
             {"role": "system", "content": COLUMN_DETECTION_SYSTEM_PROMPT},
             {"role": "user", "content": prompt},

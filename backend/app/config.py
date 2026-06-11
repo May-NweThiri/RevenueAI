@@ -20,6 +20,9 @@ class Settings(BaseSettings):
     OPENAI_MAX_TOKENS: int = 2000
     OPENAI_TEMPERATURE: float = 0.3
 
+    GEMINI_API_KEY: str | None = None
+    GEMINI_MODEL: str = "gemini-2.5-flash"
+
     CORS_ORIGINS: str = "http://localhost:3000,https://revenue-ai-delta.vercel.app"
 
     class Config:
