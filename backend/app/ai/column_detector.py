@@ -31,6 +31,7 @@ DATE_KEYWORDS = [
 CATEGORY_KEYWORDS = [
     "category", "type", "group", "segment", "channel", "region",
     "department", "class", "status", "stage", "tier",
+    "state", "country", "city", "location", "province", "area",
 ]
 
 PRODUCT_KEYWORDS = [
@@ -52,6 +53,7 @@ ID_KEYWORDS = ["id", "code", "key", "identifier", "reference", "order_id", "tran
 
 def _heuristic_detect(column_name: str, dtype: str, sample_values: list[Any]) -> str:
     col_lower = column_name.lower().replace("_", " ").replace("-", " ")
+    is_numeric = "int" in dtype or "float" in dtype
 
     for kw in ID_KEYWORDS:
         if kw in col_lower:
@@ -64,37 +66,43 @@ def _heuristic_detect(column_name: str, dtype: str, sample_values: list[Any]) ->
     if dtype == "datetime64[ns]" or "datetime" in dtype:
         return "date"
 
-    for kw in REVENUE_KEYWORDS:
-        if kw in col_lower:
-            return "revenue"
-
-    for kw in PRICE_KEYWORDS:
-        if kw in col_lower:
-            return "unit_price"
-
-    for kw in QUANTITY_KEYWORDS:
-        if kw in col_lower:
-            return "quantity"
-
-    for kw in DISCOUNT_KEYWORDS:
-        if kw in col_lower:
-            return "discount"
-
-    for kw in COST_KEYWORDS:
-        if kw in col_lower:
-            return "cost"
-
-    for kw in PRODUCT_KEYWORDS:
-        if kw in col_lower:
-            return "product"
-
+    # Customer must be checked before product: "Customer Name" contains
+    # the product keyword "name" and would be misclassified otherwise.
     for kw in CUSTOMER_KEYWORDS:
         if kw in col_lower:
             return "customer"
 
+    # Monetary/quantity roles only make sense for numeric columns.
+    # Without this guard, text columns like "Sales Channel" match "sales"
+    # and get treated as revenue.
+    if is_numeric:
+        for kw in REVENUE_KEYWORDS:
+            if kw in col_lower:
+                return "revenue"
+
+        for kw in PRICE_KEYWORDS:
+            if kw in col_lower:
+                return "unit_price"
+
+        for kw in QUANTITY_KEYWORDS:
+            if kw in col_lower:
+                return "quantity"
+
+        for kw in DISCOUNT_KEYWORDS:
+            if kw in col_lower:
+                return "discount"
+
+        for kw in COST_KEYWORDS:
+            if kw in col_lower:
+                return "cost"
+
     for kw in CATEGORY_KEYWORDS:
         if kw in col_lower:
             return "category"
+
+    for kw in PRODUCT_KEYWORDS:
+        if kw in col_lower:
+            return "product"
 
     numeric_samples = [v for v in sample_values if isinstance(v, (int, float))]
     str_samples = [str(v) for v in sample_values if v is not None]

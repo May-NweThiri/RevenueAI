@@ -10,6 +10,33 @@ def _safe_numeric(series: pd.Series) -> pd.Series:
     return pd.to_numeric(series, errors="coerce").fillna(0)
 
 
+def _normalized_groups(df: pd.DataFrame, group_col: str, value_col: str) -> pd.DataFrame:
+    """Group value_col by group_col with case/whitespace-insensitive keys.
+
+    Messy data often mixes 'Keyboard'/'KEYBOARD' or 'Lagos'/'lagos', which
+    would otherwise be counted as separate groups.
+    """
+    clean = df[[group_col, value_col]].copy()
+    clean[group_col] = clean[group_col].astype(str).str.strip()
+    clean = clean[
+        clean[group_col].notna()
+        & (clean[group_col] != "")
+        & (~clean[group_col].str.lower().isin(["nan", "none", "null"]))
+    ]
+    clean["_group_key"] = clean[group_col].str.lower()
+    clean[value_col] = pd.to_numeric(clean[value_col], errors="coerce").fillna(0)
+
+    grouped = (
+        clean.groupby("_group_key")
+        .agg(
+            _label=(group_col, lambda s: s.value_counts().index[0].title()),
+            _value=(value_col, "sum"),
+        )
+        .reset_index(drop=True)
+    )
+    return grouped.sort_values("_value", ascending=False)
+
+
 def calculate_total_revenue(df: pd.DataFrame, columns_meta: list[dict]) -> list[dict]:
     revenue_cols = _get_role_cols(df, columns_meta, "revenue")
     if not revenue_cols:
@@ -157,15 +184,13 @@ def calculate_top_products(df: pd.DataFrame, columns_meta: list[dict], top_n: in
 
     metrics = []
     try:
-        grouped = df.groupby(product_col)[revenue_col].sum().reset_index()
-        grouped[revenue_col] = _safe_numeric(grouped[revenue_col])
-        grouped = grouped.sort_values(revenue_col, ascending=False).head(top_n)
+        grouped = _normalized_groups(df, product_col, revenue_col).head(top_n)
 
         for rank, (_, row) in enumerate(grouped.iterrows(), 1):
             metrics.append({
                 "metric_type": "top_products",
-                "metric_name": str(row[product_col]),
-                "value": round(float(row[revenue_col]), 2),
+                "metric_name": str(row["_label"]),
+                "value": round(float(row["_value"]), 2),
                 "currency": "USD",
                 "period": "all",
                 "metadata": {"column": revenue_col, "product_column": product_col},
@@ -189,18 +214,16 @@ def calculate_category_breakdown(df: pd.DataFrame, columns_meta: list[dict]) -> 
 
     metrics = []
     try:
-        grouped = df.groupby(category_col)[revenue_col].sum().reset_index()
-        grouped[revenue_col] = _safe_numeric(grouped[revenue_col])
-        grouped = grouped.sort_values(revenue_col, ascending=False)
+        grouped = _normalized_groups(df, category_col, revenue_col)
 
-        total = float(grouped[revenue_col].sum())
+        total = float(grouped["_value"].sum())
 
         for rank, (_, row) in enumerate(grouped.iterrows(), 1):
-            val = float(row[revenue_col])
+            val = float(row["_value"])
             pct = round((val / total * 100), 2) if total > 0 else 0
             metrics.append({
                 "metric_type": "category_breakdown",
-                "metric_name": str(row[category_col]),
+                "metric_name": str(row["_label"]),
                 "value": round(val, 2),
                 "currency": "USD",
                 "period": "all",
